@@ -15,38 +15,34 @@
 
 # Webpack Configuration : 
 
-	(1) npm i webpack webpack-cli -D
+	(1) npm i webpack webpack-cli webpack-merge webpack-dev-server -D
 
-	    - For Installing Webpack and webpack CLI
-
-	(2) npm i webpack-merge webpack-dev-server
-
-			- For Installing Webpack dev server and merge files.
+	  - For Installing Webpack, webpack CLI, Webpack dev server and merge files.
 	
-	(3) npm install --save-dev css-loader sass-loader
+	(2) npm install --save-dev css-loader sass-loader
 
-	    - For Load the CSS & Sass Files. 
+    - For Load the CSS & Sass Files. 
 
-	(4) npm install --save-dev style-loader
+	(3) npm install --save-dev style-loader
 
-	    - For Load the Inline styles. 
+	  - For Load the Inline styles. 
 
-	(5) npm install html-webpack-plugin clean-webpack-plugin
+	(4) npm install html-webpack-plugin clean-webpack-plugin
 
-      - Install plugins for webpack
+    - Install plugins for webpack
 
-	(6) Babel Configuration :-
+	(5) Babel Configuration :-
 
-			- npm install babel-core babel-preset-env babel-preset-react --save-dev
-			- npm install --save-dev babel-loader
+		- npm install babel-core babel-preset-env babel-preset-react --save-dev
+		- npm install --save-dev babel-loader
 
-			* babel-preset-env:
+		* babel-preset-env:
 
-				- for compiling Javascript ES6 code down to ES5.
+			- for compiling Javascript ES6 code down to ES5.
 
-			* babel-preset-react:
+		* babel-preset-react:
 
-				- for compiling JSX and other stuff down to Javascript.
+			- for compiling JSX and other stuff down to Javascript.
 
 # Reference Links : 
 
