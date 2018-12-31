@@ -1,4 +1,4 @@
-# ReactJs Configuration
+# ReactJs 
 
 * Clone the repository.
  `https://github.com/bhavin-bacancy/react-app.git`
@@ -13,7 +13,7 @@
 * For build
   `npm run build`
 
-* Webpack Config 
+# Webpack Configuration : 
 
 	(1) npm i webpack webpack-cli -D
 
@@ -40,13 +40,20 @@
 			- npm install babel-core babel-preset-env babel-preset-react --save-dev
 			- npm install --save-dev babel-loader
 
-			babel-preset-env:
+			* babel-preset-env:
+
 				- for compiling Javascript ES6 code down to ES5.
-			babel-preset-react:
+
+			* babel-preset-react:
+
 				- for compiling JSX and other stuff down to Javascript.
 
-	### Reference Links ###
+# Reference Links : 
 
 	(1) https://webpack.js.org/concepts/
+
 	(2) https://medium.freecodecamp.org/how-to-build-your-own-react-boilerplate-2f8cbbeb9b3f
+
 	(3) https://www.valentinog.com/blog/react-webpack-babel/
+
+# React Configuration : 
