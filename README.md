@@ -65,13 +65,12 @@
 		* Add files using react structure : 
 
 			- src
-					- componenets
-							- App.js
-					- styles
-							- style.css
-					index.js
+				- componenets
+						- App.js
+				- styles
+						- style.css
+				index.js
 
 # Reference Links for React :
 
 	(1) https://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm
-	

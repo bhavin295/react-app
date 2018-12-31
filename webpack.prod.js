@@ -7,9 +7,9 @@ module.exports = merge(common, {
 
 	optimization: {
 		namedModules: false, // Tells webpack to use readable module
-			nodeEnv: 'production',
-			usedExports: true, // Tells webpack to determine used exports for each module
-			noEmitOnErrors: false, // skip phase whenever there are errors while compiling.
-			minimize: false, // Tell webpack to minimize the bundle 
- },
+		nodeEnv: 'production',
+		usedExports: true, // Tells webpack to determine used exports for each module
+		noEmitOnErrors: false, // skip phase whenever there are errors while compiling.
+		minimize: false, // Tell webpack to minimize the bundle 
+	},
 })

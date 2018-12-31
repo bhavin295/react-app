@@ -4,6 +4,6 @@ import App from './components/App'
 import Styles from './styles/style.css'
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('app')
+	<App />,
+	document.getElementById('app')
 )

@@ -2,9 +2,9 @@ const HtmlWebPackPlugin = require('html-webpack-plugin')
 const CleanWebPackPlugin = require('clean-webpack-plugin')
 const path = require('path')
 
- module.exports = {
-	 	mode: 'development',
-	
+module.exports = {
+	mode: 'development',
+
 	entry: ['babel-polyfill', './src/index.js'],
 	output: {
 		filename: 'bundle.js', // tells webpack how to write the compiled files to disk.
@@ -19,11 +19,11 @@ const path = require('path')
 				loader: 'babel-loader',
 			},
 			{
-				test:/\.css$/,
-				use:['style-loader','css-loader'],
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
 			}
 		]
-	},	
+	},
 
 	plugins: [
 		new HtmlWebPackPlugin({ // Plugin that simplifies creation of HTML files to serve your bundles
@@ -31,4 +31,4 @@ const path = require('path')
 		}),
 		new CleanWebPackPlugin(['dist']) // A webpack plugin to remove/clean your build folder(s) before building
 	],
- }
+}
