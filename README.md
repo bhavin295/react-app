@@ -44,7 +44,7 @@
 
 			- for compiling JSX and other stuff down to Javascript.
 
-# Reference Links : 
+# Reference Links for Webpack : 
 
 	(1) https://webpack.js.org/concepts/
 
@@ -53,3 +53,25 @@
 	(3) https://www.valentinog.com/blog/react-webpack-babel/
 
 # React Configuration : 
+
+	(1) npm install react --save
+
+	(2) npm install react-dom --save
+
+		* Add index.html file : 
+
+			This is just regular HTML. adding index_bundle.js script, which is our bundled app file.
+
+		* Add files using react structure : 
+
+			- src
+					- componenets
+							- App.js
+					- styles
+							- style.css
+					index.js
+
+# Reference Links for React :
+
+	(1) https://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm
+	

@@ -1,15 +1,13 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
-module.exports = merge(common, {
-	mode: 'development',
-	devtool: 'eval', // Choose a style of source mapping to enhance the debugging process { generated code }
-	cache: true, // cache value true or false
-	
+let config = merge(common, {
+
   devServer: {
     host: 'localhost',
     port: 3000,
-    open: true
+		open: true,
+		index: './index.html',
 	},
 	optimization: {
 		 namedModules: true, // Tells webpack to use readable module
@@ -25,3 +23,4 @@ module.exports = merge(common, {
     hints: false, // tells webpack to throw either an error or a warning when hints are found. 
   }
 })
+module.exports = config;
