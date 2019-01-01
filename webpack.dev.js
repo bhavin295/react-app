@@ -5,9 +5,10 @@ let config = merge(common, {
 
 	devServer: {
 		host: 'localhost',
-		port: 3000,
+		port: 5000,
 		open: true,
 		index: './index.html',
+		historyApiFallback: true // It used when refresh or manually give path using react router
 	},
 	optimization: {
 		namedModules: true, // Tells webpack to use readable module

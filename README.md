@@ -74,3 +74,13 @@
 # Reference Links for React :
 
 	(1) https://www.tutorialspoint.com/reactjs/reactjs_environment_setup.htm
+
+# Router Configuration :
+
+	(1) npm i react-router --save-dev
+
+	(2) npm install react-router-dom
+
+			* Apply in 	devServer: { historyApiFallback: true}
+
+				- historyApiFallback: true // It used when refresh or manually give path using react router
