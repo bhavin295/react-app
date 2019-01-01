@@ -66,10 +66,10 @@
 
 			- src
 				- componenets
-						- App.js
+					- App.js
 				- styles
-						- style.css
-				index.js
+					- style.css
+				- index.js
 
 # Reference Links for React :
 

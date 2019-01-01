@@ -3,24 +3,34 @@ import React, { Component } from 'react'
 class Child extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      name: ""
-		}
+		console.log("Child : Constructor called...")
 		this._update = this._update.bind(this);
-		this.state = {number: this.props.number};
-		
-  }
+		this.state = {number: this.props.number};	
+	}
+	
+	componentWillMount() {
+		console.log("Child : In ComponentWillMount method...");
+	}
+
+	componentDidMount() {
+		console.log("Child : In ComponentDidMount method...");
+	}
+
+	shouldComponentUpdate(){
+		console.log("Child : In shouldComponentUpdate method...");
+		return true;
+	}
+
 	componentWillReceiveProps(nextProps) {
-			console.log("In componentWillReceiveProps method... ");
+			console.log("Child : In componentWillReceiveProps method... ");
 	}
 
   _update(e){
     this.props.onUpdate(e.target.value);
-    this.setState({name: e.target.value});
   };
 
   render() {
+		console.log("Child : Render called...")
     return (
       <div>
 				<br />
