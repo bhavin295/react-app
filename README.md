@@ -81,7 +81,7 @@
 
 	(2) npm install react-router-dom
 
-			* Apply in 	devServer: { historyApiFallback: true}
+			* Apply in devServer: { historyApiFallback: true}
 
 				- historyApiFallback: true 
 				// It used when refresh or manually give path using react router
