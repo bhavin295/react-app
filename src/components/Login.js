@@ -7,8 +7,8 @@ class Login extends Component {
 
 		return (
 			<div>
-				<h5> Welcome to Login Page </h5>
-        <Link to="/register"> Register </Link>
+				<h4 className="font-color"> Welcome to Login Page </h4>
+       			<Link to="/register"> Register </Link>
 			</div>
 		)
 	}

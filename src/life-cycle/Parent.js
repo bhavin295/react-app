@@ -36,8 +36,8 @@ class Parent extends Component {
 		console.log("Parent : Render called...")
 		return (
 			<div>
-        <span>Value in Parent Component State : {this.state.name}</span>
-
+				<br />
+        		<span>Value in Parent Component State : {this.state.name}</span>
 				<Child onUpdate={this.onChange} number={this.state.number}/>
 			</div>
 		)

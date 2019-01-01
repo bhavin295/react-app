@@ -7,8 +7,8 @@ class Register extends Component {
 
 		return (
 			<div>
-				<h5> Welcome to Register Page </h5>
-        <Link to="/about">About Us</Link>
+				<h4 className="font-color"> Welcome to Register Page </h4>
+        		<Link to="/about">About Us</Link>
 			</div>
 		)
 	}

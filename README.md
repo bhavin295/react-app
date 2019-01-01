@@ -21,7 +21,7 @@
 	
 	(2) npm install --save-dev css-loader sass-loader
 
-    - For Load the CSS & Sass Files. 
+      - For Load the CSS & Sass Files. 
 
 	(3) npm install --save-dev style-loader
 
@@ -29,7 +29,7 @@
 
 	(4) npm install html-webpack-plugin clean-webpack-plugin
 
-    - Install plugins for webpack
+      - Install plugins for webpack
 
 	(5) Babel Configuration :-
 
@@ -83,4 +83,5 @@
 
 			* Apply in 	devServer: { historyApiFallback: true}
 
-				- historyApiFallback: true // It used when refresh or manually give path using react router
+				- historyApiFallback: true 
+				// It used when refresh or manually give path using react router

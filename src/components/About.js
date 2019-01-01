@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Contact from './Contact';
 import Summary from './Summary';
-import { BrowserRouter as Router, Route, Link, Switch, browserHistory } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 
 class About extends Component {
@@ -12,14 +12,15 @@ class About extends Component {
 
 	render() {
 		let { match } = this.props;
-		console.log("match", match)
 		return (
 			<div>
-				<h4> Welcome to About US </h4>
+				<h4 className="font-color"> Welcome to About US </h4>
 				<Link to={`${match.url}/contact`}> Contact US </Link>
+				<br />
 				<Route exact path={`${match.path}/contact`} component={Contact}/>
 				<br />
 				<Link to={`${match.url}/summary`}> Summary </Link>
+				<br />
 				<Route exact path={`${match.path}/summary`} component={Summary} />
 
 			</div>

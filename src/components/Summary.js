@@ -6,7 +6,8 @@ class Summary extends Component {
 
 		return (
 			<div>
-				<span> Welcome to our page </span>
+				<h4 className="font-color"> Summary </h4>
+				<span> Welcome to our page </span><br />
 			</div>
 		)
 	}
