@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Home from './components/Home';
 import Parent from '../src/life-cycle/Parent';
 import MainParent from '../src/data-communication/main_parent'
+import FormComponent from '../src/form-validation/FormComponent'
 import Login from '../src/components/Login';
 import Register from '../src/components/Register';
 import About from '../src/components/About';
@@ -16,6 +17,7 @@ ReactDOM.render((
 			<Route exact path='/' component={Home} />
 			<Route exact path='/life-cycle' component={Parent} />
 			<Route exact path='/data-communication' component={MainParent} />
+			<Route exact path='/form-validation' component={FormComponent} />
 			<Route exact path='/login' component={Login} />
 			<Route exact path='/register' component={Register} />
 			<Route path='/about' component={About} />

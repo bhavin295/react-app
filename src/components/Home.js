@@ -18,6 +18,8 @@ class Home extends Component {
 					<br /><br />
 					<Link to="/data-communication"> Data-communication </Link>
 					<br /><br />
+					<Link to="/form-validation"> Form-validation </Link>
+					<br /><br />
 					<Link to="/login"> Login </Link>
 					<br /><br />
 					<Link to="/register">Register</Link>
