@@ -16,6 +16,8 @@ class Home extends Component {
 				<div>
 					<Link to="/life-cycle"> Life-cycle </Link>
 					<br /><br />
+					<Link to="/data-communication"> Data-communication </Link>
+					<br /><br />
 					<Link to="/login"> Login </Link>
 					<br /><br />
 					<Link to="/register">Register</Link>
