@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Login extends Component {
 
 	constructor() {
 		super();
 		this.state = {
-			username: 'bhavinmodi',
-			password: 'Bhavin@123',
+			username: '',
+			password: '',
 			errors: {}
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,49 +17,45 @@ class Login extends Component {
 	handleSubmit(event) {
 		console.log("Data..", this.state);
 		event.preventDefault();
-		if (this.validateForm()) {
-			alert("Login Successfully...");
-		}
+		this.validateUser();
 	}
 
-	handleBlur(event){
+	handleBlur(event, field){
 		event.preventDefault();
-		this.validateForm();
 	}
 
-	validateForm() {
-		let errors = {};
-		let formIsValid = true;
-
-		if (!this.state.username) {
-			formIsValid = false;
-			errors["username"] = "*Please Enter your Username.";
-		}
-
-		
-		if (!this.state.password) {
-			formIsValid = false;
-			errors["password"] = "*Please enter your password.";
-		}
-
-		this.setState({
-			errors: errors
-		});
-		return formIsValid;
+	componentWillMount() {
+		const active  = localStorage.getItem('userData') ? true : false;
+		console.log("Active",active,localStorage.getItem('userData'));
+		this._LoggedIn(active)
 	}
 
+	 _LoggedIn(active) {
+		if(active){
+			this.props.history.push('/dashboard');
+		} 
+	}
+
+	validateUser() {
+		if(this.state.username == 'a' && this.state.password == '1' ){
+			localStorage.setItem("userData",this.state.username);
+			this.props.history.push('/dashboard');
+		}
+		else{
+			alert("Invalid Username or Password...");
+		}
+	}
 
 	render() {
-
 		return (
 			<div>
-				<form className="w3-login-form" onSubmit={this.handleSubmit} onBlur={this.handleBlur}>
+				<form className="w3-login-form" onSubmit={this.handleSubmit}>
 					<h4 className="font-color"> Welcome to Login Page </h4>
 					<div> Username : &nbsp;
-							<input type="text" name="username" value={this.state.username} onChange={(e) => { this.setState({ username: e.target.value }) }} placeholder="Username" /> <span className="error-msg"> {this.state.errors.username}</span>
+							<input type="text" name="username" value={this.state.username} onBlur={(e) => this.handleBlur(e, 'username')} onChange={(e) => { this.setState({ username: e.target.value }) }} placeholder="Username" /> <span className="error-msg"> {this.state.errors.username}</span>
 					</div><br />
 					<div> &nbsp; Password : &nbsp;
-          				<input type="password" value={this.state.password} onChange={(e) => { this.setState({ password: e.target.value }) }} name="password" placeholder="Password" /><span className="error-msg"> {this.state.errors.password} </span>	<br /><br />
+          				<input type="password" value={this.state.password} onBlur={(e) => this.handleBlur(e, 'password')} onChange={(e) => { this.setState({ password: e.target.value }) }} name="password" placeholder="Password" /><span className="error-msg"> {this.state.errors.password} </span>	<br /><br />
 					</div>
 					<div>
 						<button className="w3-btn" type="submit"><b> Login </b></button>

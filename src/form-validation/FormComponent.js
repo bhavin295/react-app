@@ -130,7 +130,6 @@ class FormComponent extends Component {
 					<h3 className="font-color"> Sign Up </h3>
 					<div> First Name : &nbsp;
 							<input type="text" name="firstname" onBlur={(e) => this.handleBlur(e, 'firstname')} value={this.state.firstname} onChange={(e) => { this.setState({ firstname: e.target.value }) }} placeholder="First Name" /> <span className="error-msg"> {this.state.errors.firstname}</span>
-						{/* <div className="error-msg"> {this.state.errors.firstname} </div> */}
 					</div><br />
 					<div> Last Name : &nbsp;
           		<input type="text" name="lastname" onBlur={(e) => this.handleBlur(e, 'lastname')} value={this.state.lastname} onChange={(e) => { this.setState({ lastname: e.target.value }) }} placeholder="Last Name" /><span className="error-msg"> {this.state.errors.lastname} </span><br /><br />

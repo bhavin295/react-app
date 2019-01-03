@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Switch, browserHistory } from "react-router";
+import { Route, Switch, browserHistory, Redirect } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 import Home from './components/Home';
 import Parent from '../src/life-cycle/Parent';
@@ -9,10 +9,29 @@ import FormComponent from '../src/form-validation/FormComponent'
 import Login from '../src/components/Login';
 import Register from '../src/components/Register';
 import About from '../src/components/About';
+import Dashboard from '../src/components/Dashboard';
+import UserList from '../src/components/UserList';
 import Styles from './styles/style.css';
 
+const PrivateRoute = ({ component: Component, authed }) => {
+	console.log("authed",authed)
+  return (
+    <Route
+      render={props =>
+        authed ? (
+          <Component {...props}/>
+        ) : (
+          <Redirect to={{ pathname: "/login" }} />
+        )
+      }
+    />
+  );
+};
+
+const active  = localStorage.getItem('userData') ? true : false;
+
 ReactDOM.render((	
-	<Router history={browserHistory}>
+	<Router history={browserHistory} >
 		<Switch>
 			<Route exact path='/' component={Home} />
 			<Route exact path='/life-cycle' component={Parent} />
@@ -21,6 +40,8 @@ ReactDOM.render((
 			<Route exact path='/login' component={Login} />
 			<Route exact path='/register' component={Register} />
 			<Route path='/about' component={About} />
+			<PrivateRoute exact path='/userlist' authed = {active} component={UserList} />
+			<PrivateRoute exact path='/dashboard' authed = {active} component={Dashboard} />
 		</Switch>
 	</Router>
 	),document.getElementById("app"));
