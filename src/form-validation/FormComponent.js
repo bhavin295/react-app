@@ -16,6 +16,7 @@ class FormComponent extends Component {
 			errors: {}
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleBlur = this.handleBlur.bind(this);
 	}
 
 	handleSubmit(event) {
@@ -26,6 +27,12 @@ class FormComponent extends Component {
 		}
 	}
 
+	handleBlur(event){
+		event.preventDefault();
+		if (this.validateForm()) {
+			alert("Blur called...");
+		}
+	}
 	validateForm() {
 		let errors = {};
 		let formIsValid = true;
@@ -72,7 +79,7 @@ class FormComponent extends Component {
 		if (typeof !this.state.email !== "undefined") {
 			//regular expression for email validation
 			var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-			if (!pattern.test(this.state.email)) {
+			if (!pattern.test(!this.state.email)) {
 				formIsValid = false;
 				errors["email"] = "*Please Enter valid Email-ID.";
 			}
@@ -109,8 +116,8 @@ class FormComponent extends Component {
 	render() {
 		return (
 			<div>
-				<form onSubmit={this.handleSubmit}>
-					<h4 className="font-color"> Sign Up </h4>
+				<form className="w3-signup-form" onSubmit={this.handleSubmit} onBlur={this.handleBlur}>
+					<h2 className="font-color"> Sign Up </h2>
 					
 					<div> First Name : &nbsp;
 							<input type="text" name="firstname" value={this.state.firstname} onChange={(e) => { this.setState({ firstname: e.target.value }) }} placeholder="First Name" /> <span className="error-msg"> {this.state.errors.firstname}</span>
@@ -120,7 +127,7 @@ class FormComponent extends Component {
           		<input type="text" name="lastname" value={this.state.lastname} onChange={(e) => { this.setState({ lastname: e.target.value }) }} placeholder="Last Name" /><span className="error-msg"> {this.state.errors.lastname} </span><br /><br />
 					</div>
 					<div className="w3-flex"> Address : &nbsp;
-          		<textarea style={{ height: '50px', width: '140px' }} type="text" name="address" value={this.state.address} onChange={(e) => { this.setState({ address: e.target.value }) }} placeholder="Address" /> <span className="error-msg"> {this.state.errors.address} </span><br /><br />
+          		<textarea style={{ height: '50px', width: '180px' }} type="text" name="address" value={this.state.address} onChange={(e) => { this.setState({ address: e.target.value }) }} placeholder="Address" /> <span className="error-msg"> {this.state.errors.address} </span><br /><br />
 					</div><br />
 					<div>
 						Pick your City : &nbsp;

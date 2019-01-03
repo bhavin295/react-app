@@ -3,10 +3,22 @@
 }
 
 .error-msg{
-	/* margin-top: 10px; */
 	color: red;
 }
 
 .w3-flex{
 	display: flex;
+	justify-content: center;
+}
+
+.w3-signup-form {
+	text-align: center; 
+	padding: 32px;
+	margin-top: 2rem;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 550px;
+	background-color: #ffD;
+	border-radius: 25px;
+	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
 }
