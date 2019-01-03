@@ -29,10 +29,9 @@ class FormComponent extends Component {
 
 	handleBlur(event){
 		event.preventDefault();
-		if (this.validateForm()) {
-			alert("Blur called...");
-		}
+		this.validateForm();
 	}
+
 	validateForm() {
 		let errors = {};
 		let formIsValid = true;
@@ -117,7 +116,7 @@ class FormComponent extends Component {
 		return (
 			<div>
 				<form className="w3-signup-form" onSubmit={this.handleSubmit} onBlur={this.handleBlur}>
-					<h2 className="font-color"> Sign Up </h2>
+					<h3 className="font-color"> Sign Up </h3>
 					
 					<div> First Name : &nbsp;
 							<input type="text" name="firstname" value={this.state.firstname} onChange={(e) => { this.setState({ firstname: e.target.value }) }} placeholder="First Name" /> <span className="error-msg"> {this.state.errors.firstname}</span>
@@ -153,7 +152,7 @@ class FormComponent extends Component {
           				<input type="password" value={this.state.confpwd} onChange={(e) => { this.setState({ confpwd: e.target.value }) }} name="confpwd" placeholder="Confirm Password" /><span className="error-msg"> {this.state.errors.confpwd} </span><br /><br />
 					</div>
 					<div>
-						<button className="w3-btn" type="submit"> Submit </button>
+						<button className="w3-btn" type="submit"><b> Submit </b></button>
 					</div>
 				</form>
 			</div>

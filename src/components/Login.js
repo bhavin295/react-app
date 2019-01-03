@@ -11,7 +11,7 @@ class Login extends Component {
 			errors: {}
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
-		// this.handleBlur = this.handleBlur.bind(this);
+		this.handleBlur = this.handleBlur.bind(this);
 	}
 
 	handleSubmit(event) {
@@ -20,6 +20,11 @@ class Login extends Component {
 		if (this.validateForm()) {
 			alert("Login Successfully...");
 		}
+	}
+
+	handleBlur(event){
+		event.preventDefault();
+		this.validateForm();
 	}
 
 	validateForm() {
@@ -48,7 +53,7 @@ class Login extends Component {
 
 		return (
 			<div>
-				<form className="w3-login-form" onSubmit={this.handleSubmit}>
+				<form className="w3-login-form" onSubmit={this.handleSubmit} onBlur={this.handleBlur}>
 					<h4 className="font-color"> Welcome to Login Page </h4>
 					<div> Username : &nbsp;
 							<input type="text" name="username" value={this.state.username} onChange={(e) => { this.setState({ username: e.target.value }) }} placeholder="Username" /> <span className="error-msg"> {this.state.errors.username}</span>
@@ -57,7 +62,7 @@ class Login extends Component {
           				<input type="password" value={this.state.password} onChange={(e) => { this.setState({ password: e.target.value }) }} name="password" placeholder="Password" /><span className="error-msg"> {this.state.errors.password} </span>	<br /><br />
 					</div>
 					<div>
-						<button className="w3-btn" type="submit"> Login </button>
+						<button className="w3-btn" type="submit"><b> Login </b></button>
 					</div><br/>
 					<div>
 						<Link to="/register"> Register </Link>
