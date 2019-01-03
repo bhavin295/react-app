@@ -147,17 +147,17 @@ class FormComponent extends Component {
 						<input type="email" name="email" value={this.state.email} onChange={(e) => { this.setState({ email: e.target.value }) }} placeholder="Email" /><span className="error-msg"> {this.state.errors.email} </span> <br /><br />
 					</div>
 					<div> Password :&nbsp;
-          		<input type="password" value={this.state.password} onChange={(e) => { this.setState({ password: e.target.value }) }} name="password" placeholder="Password" /><span className="error-msg"> {this.state.errors.password} </span>	<br /><br />
+          				<input type="password" value={this.state.password} onChange={(e) => { this.setState({ password: e.target.value }) }} name="password" placeholder="Password" /><span className="error-msg"> {this.state.errors.password} </span>	<br /><br />
 					</div>
 					<div> Confirm Password :&nbsp;
-          		<input type="password" value={this.state.confpwd} onChange={(e) => { this.setState({ confpwd: e.target.value }) }} name="confpwd" placeholder="Confirm Password" /><span className="error-msg"> {this.state.errors.confpwd} </span><br /><br />
+          				<input type="password" value={this.state.confpwd} onChange={(e) => { this.setState({ confpwd: e.target.value }) }} name="confpwd" placeholder="Confirm Password" /><span className="error-msg"> {this.state.errors.confpwd} </span><br /><br />
 					</div>
 					<div>
-						<button type="submit"> Submit </button>
+						<button className="w3-btn" type="submit"> Submit </button>
 					</div>
 				</form>
 			</div>
-		)
+		)	
 	}
 }
 
