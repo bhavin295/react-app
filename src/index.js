@@ -14,7 +14,6 @@ import UserList from '../src/components/UserList';
 import Styles from './styles/style.css';
 
 const PrivateRoute = ({ component: Component, authed }) => {
-	console.log("authed",authed)
   return (
     <Route
       render={props =>

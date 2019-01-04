@@ -41,3 +41,14 @@
 	border-radius: 15px;
 	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
 }
+
+.w3-loading{
+	position: fixed;
+	left: 0;
+	right: 0;
+	float: none;
+	z-index: 9999;
+	height: 100%;
+	padding-top: 15%;
+	margin: 0 auto;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import UserUtils from './../utils/user';
 
 class Login extends Component {
 
@@ -14,10 +15,10 @@ class Login extends Component {
 		this.handleBlur = this.handleBlur.bind(this);
 	}
 
-	handleSubmit(event) {
-		console.log("Data..", this.state);
+	async handleSubmit(event) {
 		event.preventDefault();
-		this.validateUser();
+		const user = await UserUtils.login({ email: this.state.username, password: this.state.password });
+		this.validateUser(user);
 	}
 
 	handleBlur(event, field){
@@ -26,7 +27,6 @@ class Login extends Component {
 
 	componentWillMount() {
 		const active  = localStorage.getItem('userData') ? true : false;
-		console.log("Active",active,localStorage.getItem('userData'));
 		this._LoggedIn(active)
 	}
 
@@ -36,16 +36,13 @@ class Login extends Component {
 		} 
 	}
 
-	validateUser() {
-		if(this.state.username == 'a' && this.state.password == '1' ){
-			localStorage.setItem("userData",this.state.username);
+	validateUser(user) {
+		if(this.state.username == 'test@user.com' && this.state.password == '1234567' ){
+			localStorage.setItem("userData",JSON.stringify(user));
 			this.props.history.push('/dashboard');
 		}
-		else{
-			alert("Invalid Username or Password...");
-		}
 	}
-
+	
 	render() {
 		return (
 			<div>
