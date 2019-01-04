@@ -30,6 +30,13 @@
 	background-color: lightblue;
 }
 
+.w3-assign-btn{
+	height: 26px;
+	width: 60px;
+	border-radius: 5px;
+	background-color: lightblue;
+}
+
 .w3-login-form {
 	text-align: center; 
 	padding: 32px;

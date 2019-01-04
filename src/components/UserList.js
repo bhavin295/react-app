@@ -34,6 +34,7 @@ class UserList extends Component {
 			<div>
 				<h4 className="font-color"> Welcome Users... </h4>
 				<Link to="/dashboard"> Dashboard </Link>
+				<br />
 				<div className="w3-loading w3-flex">
 					<FadeLoader
 						sizeUnit={"px"}
@@ -44,7 +45,12 @@ class UserList extends Component {
 				{
 					(users || []).map((val, index) => (
 						<div key={index}>
-							<p>{val.fullName}</p>
+							<div>
+								<div>{val.fullName}&nbsp;&nbsp;&nbsp;&nbsp;
+								<button className="w3-assign-btn"><b> Assign </b></button>
+								</div>
+								<br/>
+							</div>
 						</div>
 					))
 				}

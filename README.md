@@ -85,3 +85,11 @@
 
 				- historyApiFallback: true 
 				// It used when refresh or manually give path using react router
+
+# Redux Configuration :
+
+	(1) npm install --save react-redux
+
+			- install redux in your app.
+
+			
