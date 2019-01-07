@@ -12,35 +12,40 @@ import About from '../src/components/About';
 import Dashboard from '../src/components/Dashboard';
 import UserList from '../src/components/UserList';
 import Styles from './styles/style.css';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import store from './redux/store/index'
 
 const PrivateRoute = ({ component: Component, authed }) => {
-  return (
-    <Route
-      render={props =>
-        authed ? (
-          <Component {...props}/>
-        ) : (
-          <Redirect to={{ pathname: "/login" }} />
-        )
-      }
-    />
-  );
+	return (
+		<Route
+			render={props =>
+				authed ? (
+					<Component {...props} />
+				) : (
+						<Redirect to={{ pathname: "/login" }} />
+					)
+			}
+		/>
+	);
 };
 
-const active  = localStorage.getItem('userData') ? true : false;
+const active = localStorage.getItem('userData') ? true : false;
 
-ReactDOM.render((	
-	<Router history={browserHistory} >
-		<Switch>
-			<Route exact path='/' component={Home} />
-			<Route exact path='/life-cycle' component={Parent} />
-			<Route exact path='/data-communication' component={MainParent} />
-			<Route exact path='/form-validation' component={FormComponent} />
-			<Route exact path='/login' component={Login} />
-			<Route exact path='/register' component={Register} />
-			<Route path='/about' component={About} />
-			<PrivateRoute exact path='/userlist' authed = {active} component={UserList} />
-			<PrivateRoute exact path='/dashboard' authed = {active} component={Dashboard} />
-		</Switch>
-	</Router>
-	),document.getElementById("app"));
+ReactDOM.render((
+	<Provider store={store}>
+		<Router history={browserHistory} >
+			<Switch>
+				<Route exact path='/' component={Home} />
+				<Route exact path='/life-cycle' component={Parent} />
+				<Route exact path='/data-communication' component={MainParent} />
+				<Route exact path='/form-validation' component={FormComponent} />
+				<Route exact path='/login' component={Login} />
+				<Route exact path='/register' component={Register} />
+				<Route path='/about' component={About} />
+				<PrivateRoute exact path='/userlist' authed={active} component={UserList} />
+				<PrivateRoute exact path='/dashboard' authed={active} component={Dashboard} />
+			</Switch>
+		</Router>
+	</Provider>
+), document.getElementById("app"));

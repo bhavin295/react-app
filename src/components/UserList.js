@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import UserUtils from './../utils/user';
-import { FadeLoader } from 'react-spinners';
+import { connect } from 'react-redux';
+import { setUserList, getAssignUser } from './../redux/actions/index';
+import AssignUser from './AssignUser';
 
 class UserList extends Component {
 
@@ -11,16 +13,16 @@ class UserList extends Component {
 			users: [],
 			loading: false
 		}
+		this._assignUser = this._assignUser.bind(this);
 	}
 
-	async componentDidMount() {
+	componentDidMount() {
 		const active = JSON.parse(localStorage.getItem('userData'));
 		this.setState({
-			msg: 'Fetching User Data...',
 			loading: true,
 		})
 		UserUtils.getAllUserList(active.token).then((response) => {
-			console.log("response", response);
+			this.props.dispatch(setUserList(response.data));
 			this.setState({
 				users: response.data,
 				loading: false,
@@ -28,28 +30,29 @@ class UserList extends Component {
 		});
 	}
 
+	_assignUser(val) {
+		this.props.dispatch(getAssignUser(val));
+	}
+
 	render() {
 		const { users } = this.state;
 		return (
 			<div>
 				<h4 className="font-color"> Welcome Users... </h4>
-				<Link to="/dashboard"> Dashboard </Link>
+				<AssignUser />
 				<br />
-				<div className="w3-loading w3-flex">
-					<FadeLoader
-						sizeUnit={"px"}
-						size={50}
-						loading={ this.state.loading}
-					/>
-				</div>
+				<Link to="/dashboard"> Dashboard </Link>
+				<br /><br />
+				{this.state.loading ? <div className="w3-loading"> Loading... </div> : null}
 				{
 					(users || []).map((val, index) => (
 						<div key={index}>
 							<div>
 								<div>{val.fullName}&nbsp;&nbsp;&nbsp;&nbsp;
-								<button className="w3-assign-btn"><b> Assign </b></button>
+								<button className="w3-assign-btn" onClick={() => this._assignUser(val.fullName)}><b>
+										{val.fullName === this.props.assignUserName ? 'Assigned' : 'Assign'} </b></button>
 								</div>
-								<br/>
+								<br />
 							</div>
 						</div>
 					))
@@ -59,4 +62,8 @@ class UserList extends Component {
 	}
 }
 
-export default UserList
+const select = state => ({
+	userlist: state.userReducer.users,
+	assignUserName: state.assignUserReducer.assignUser,
+});
+export default connect(select)(UserList);

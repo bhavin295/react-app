@@ -92,4 +92,6 @@
 
 			- install redux in your app.
 
+	(2) npm install redux --save
+
 			
