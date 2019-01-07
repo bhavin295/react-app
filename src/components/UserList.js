@@ -49,8 +49,8 @@ class UserList extends Component {
 						<div key={index}>
 							<div>
 								<div>{val.fullName}&nbsp;&nbsp;&nbsp;&nbsp;
-								<button className="w3-assign-btn" onClick={() => this._assignUser(val.fullName)}><b>
-										{val.fullName === this.props.assignUserName ? 'Assigned' : 'Assign'} </b></button>
+								<button className={(val.fullName === this.props.assignUserName) ? "w3-assigned-btn" : "w3-assign-btn"} onClick={() => this._assignUser(val.fullName)}>
+									<b>	{val.fullName === this.props.assignUserName ?  'Assigned' : 'Assign'} </b></button>
 								</div>
 								<br />
 							</div>

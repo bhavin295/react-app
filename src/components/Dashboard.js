@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import userConnect from './../redux/connect/userConnect';
 import AssignUser from './AssignUser';
 
 class Dashboard extends Component {
@@ -27,4 +26,4 @@ class Dashboard extends Component {
 		)
 	}
 }
-export default (Dashboard);
+export default Dashboard;

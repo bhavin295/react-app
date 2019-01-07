@@ -37,6 +37,13 @@
 	background-color: lightblue;
 }
 
+.w3-assigned-btn{
+	height: 26px;
+	width: 70px;
+	border-radius: 5px;
+	background-color: lightseagreen;
+}
+
 .w3-login-form {
 	text-align: center; 
 	padding: 32px;
