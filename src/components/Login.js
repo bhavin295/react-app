@@ -47,7 +47,7 @@ class Login extends Component {
 		return (
 			<div>
 				<form className="w3-login-form" onSubmit={this.handleSubmit}>
-					<h4 className="font-color"> Welcome to Login Page </h4>
+					<h3 className="font-color"> Welcome to Login Page </h3>
 					<div> Username : &nbsp;
 							<input type="text" name="username" value={this.state.username} onBlur={(e) => this.handleBlur(e, 'username')} onChange={(e) => { this.setState({ username: e.target.value }) }} placeholder="Username" /> <span className="error-msg"> {this.state.errors.username}</span>
 					</div><br />
@@ -58,7 +58,7 @@ class Login extends Component {
 						<button className="w3-btn" type="submit"><b> Login </b></button>
 					</div><br/>
 					<div>
-						<Link to="/register"> Register </Link>
+						<Link to="/register"> Create account </Link>
 					</div>
 				</form>
 			</div>

@@ -1,5 +1,14 @@
+body{
+	background-image: url('https://backgroundcheckall.com/wp-content/uploads/2017/12/professional-background-images-for-websites-10.jpg');
+	background-size: cover;
+}
+
 .font-color {
 	color: maroon;
+}
+
+.w3-text-center{
+	text-align: center;
 }
 
 .error-msg{
@@ -9,6 +18,17 @@
 .w3-flex{
 	display: flex;
 	justify-content: center;
+}
+
+.w3-userlist-form {
+	padding: 32px;
+	margin-top: 2rem;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 650px;
+	background-color: floralwhite;
+	border-radius: 10px;
+	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
 }
 
 .w3-signup-form {
@@ -33,15 +53,17 @@
 .w3-assign-btn{
 	height: 26px;
 	width: 70px;
-	border-radius: 5px;
+	border-radius: 3px;
 	background-color: lightblue;
+	float: right;
 }
 
 .w3-assigned-btn{
 	height: 26px;
 	width: 70px;
-	border-radius: 5px;
-	background-color: lightseagreen;
+	border-radius: 3px;
+	background-color: wheat;
+	float: right;
 }
 
 .w3-login-form {

@@ -4,7 +4,7 @@ import assignUserConnect from './../redux/connect/assignUserConnect';
 class AssignUser extends Component {
 	render() {
 		return (
-			<div style={{ color: 'blue' }}>
+			<div style={{ color: 'blue' , textAlign: 'center' }}>
 				<span>Assigned User : {this.props.assignUserName}</span>
 			</div>
 		)

@@ -14,7 +14,7 @@ class About extends Component {
 		let { match } = this.props;
 		return (
 			<div>
-				<h4 className="font-color"> Welcome to About US </h4>
+				<h3 className="font-color"> Welcome to About US </h3>
 				<Link to={`${match.url}/contact`}> Contact US </Link>
 				<br />
 				<Route exact path={`${match.path}/contact`} component={Contact}/>
