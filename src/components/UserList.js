@@ -43,21 +43,21 @@ class UserList extends Component {
 				<br />
 				{this.state.loading ? <div className="w3-loading"> Loading... </div> : null}
 				<div className="w3-userlist-form">
-				<Link to="/dashboard" className="w3-flex"> Dashboard </Link>
-				<br /><br />
-				{
-					(users || []).map((val, index) => (
-						<div key={index}>
-							<div>
-								<div>{val.fullName}&nbsp;&nbsp;&nbsp;&nbsp;
-								<button className={(val.fullName === this.props.assignUserName) ? "w3-assigned-btn" : "w3-assign-btn"} onClick={() => this._assignUser(val.fullName)}>
-										<b>	{val.fullName === this.props.assignUserName ? 'Assigned' : 'Assign'} </b></button>
+					<Link to="/dashboard" className="w3-flex"> Dashboard </Link>
+					<br /><br />
+					{
+						(users || []).map((val, index) => (
+							<div key={index}>
+								<div>
+									<div>{val.fullName}&nbsp;&nbsp;&nbsp;&nbsp;
+											<button className={(val.fullName === this.props.assignUserName) ? "w3-assigned-btn" : "w3-assign-btn"} onClick={() => this._assignUser(val.fullName)}>
+											<b>	{val.fullName === this.props.assignUserName ? 'Assigned' : 'Assign'} </b></button>
+									</div>
+									<br />
 								</div>
-								<br />
 							</div>
-						</div>
-					))
-				}
+						))
+					}
 				</div>
 			</div>
 		)

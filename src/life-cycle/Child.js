@@ -34,12 +34,14 @@ class Child extends React.Component {
     return (
       <div>
 				<br />
+				<div> Enter value from child :&nbsp;
         <input
 					type="text"
-          placeholder="type here"
+          placeholder="Type here"
           onChange={this._update}
           value={this.state.name}
         />
+				</div>
       </div>
     )
   }

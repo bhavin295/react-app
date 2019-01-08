@@ -11,7 +11,7 @@ class Home extends Component {
 		return (
 			<div>
 				<div>
-		       		<h3 className="font-color"> Welcome to Home page </h3>
+					<h3 className="font-color"> Welcome to Home page </h3>
 				</div>
 				<div>
 					<Link to="/life-cycle"> Life-cycle </Link>
