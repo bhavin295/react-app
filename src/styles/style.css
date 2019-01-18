@@ -1,5 +1,5 @@
 body{
-	background-image: url('https://backgroundcheckall.com/wp-content/uploads/2017/12/professional-background-images-for-websites-10.jpg');
+	background-image: url('http://doanarae.com/doanarae/9064-hd-white-wallpaper_26636.jpg');
 	background-size: cover;
 }
 
@@ -44,12 +44,18 @@ body{
 }
 
 .w3-left-form {
-	padding: 32px;
-	max-width: 210px;
+	padding: 16px;
+	font-size: 14px;
+	
+	/* max-width: 210px;
 	height: 617px;
 	/* border-radius: 10px; */
-	background-color: lightgray;
-	box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+	/* background-color: lightgray;
+	box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07); */ 
+}
+
+.w3-underline:hover{
+	text-decoration: underline;
 }
 
 .w3-main-form {
@@ -58,7 +64,7 @@ body{
 	color: white;
 	padding: 15px;
 	max-width: 100%;
-	height: 650px;
+	height: 664px;
 	float: right;
 	width: 78%;
 	background-image: url('http://marketectsinc.com/wp-content/uploads/2017/09/LinkedIn.jpg');

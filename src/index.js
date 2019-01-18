@@ -37,6 +37,7 @@ ReactDOM.render((
 		<Router history={browserHistory} >
 			<Switch>
 				<Route exact path='/' component={Home} />
+				<Route exact path='/home' component={Home} />
 				<Route exact path='/life-cycle' component={Parent} />
 				<Route exact path='/data-communication' component={MainParent} />
 				<Route exact path='/form-validation' component={FormComponent} />

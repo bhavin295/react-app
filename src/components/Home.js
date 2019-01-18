@@ -11,22 +11,22 @@ class Home extends Component {
 		return (
 			<div>
 				<div>
-					<h2 className="w3-font-color w3-main-form"> Welcome to Home page </h2>
+					<h3 className="w3-font-color w3-main-form"> Welcome to Home page </h3>
 				</div>
-				<div className="w3-left-form">
-					<Link to="/login"> Login </Link>
+				<div className="w3-left-form w3-underline">
+					<Link to="/login"><i class="fas fa-sign-in-alt">&nbsp;&nbsp; Login </i></Link>
 					<br /><br />
-					<Link to="/register">Register</Link>
+					<Link to="/register"><i class="fas fa-user-plus">&nbsp; Sign Up </i></Link>
 					<br /><br />
-					<Link to="/about">About Us</Link>
+					<Link to="/about"><i class="fas fa-user">&nbsp;&nbsp; About Us </i></Link>
 					<br /><br />
-					<Link to="/data-communication"> Data-communication </Link>
+					<Link to="/data-communication"><i class='fas fa-american-sign-language-interpreting'>&nbsp; Data-communication </i></Link>
 					<br /><br />
-					<Link to="/form-validation"> Form-validation </Link>
+					<Link to="/form-validation"><i class="fas fa-user-tie">&nbsp;&nbsp; Form-validation </i></Link>
 					<br /><br />
-					<Link to="/life-cycle"> Life-cycle </Link>
+					<Link to="/life-cycle"><i class="fas fa-recycle">&nbsp;&nbsp; Life-cycle </i></Link>
 				</div>
-			
+
 			</div>
 		)
 	}

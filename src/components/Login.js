@@ -33,9 +33,12 @@ class Login extends PureComponent {
 	}
 
 	validateUser(user) {
-		if(this.state.username == 'test@user.com' && this.state.password == '1234567' ){
+		if(this.state.username == 'test@user.com' && this.state.password == 'test@user2019' ){
 			localStorage.setItem("userData",JSON.stringify(user));
 			this.props.history.push('/dashboard');
+		}
+		else{
+			alert("Invalid Username or Password...!!!")
 		}
 	}
 	
