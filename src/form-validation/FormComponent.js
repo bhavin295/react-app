@@ -9,15 +9,19 @@ class FormComponent extends Component {
 			lastname: '',
 			address: '',
 			city: '',
+			selectedFile: '',
 			email: '',
 			gender: '',
-			language: '',
+			language: [],
 			password: '',
 			confpwd: '',
 			errors: {}
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleBlur = this.handleBlur.bind(this);
+		this.fileChangedHandler = this.fileChangedHandler.bind(this);
+		this.onChecked = this.onChecked.bind(this);
+		
 	}
 
 	handleSubmit(event) {
@@ -32,6 +36,21 @@ class FormComponent extends Component {
 		event.preventDefault();
 		this.validateForm(field);
 	}
+
+	fileChangedHandler(event){
+		this.setState({selectedFile: event.target.files[0]})
+	}
+
+	onChecked(e) {
+    const options = this.state.language
+    if (e.target.checked) {
+      options.push(e.target.value)
+		} 
+		else{
+			options.pop(e.target.value)
+		}
+    this.setState({ language: options })
+  }
 
 	validateForm(field) {
 		let errors = {};
@@ -75,6 +94,11 @@ class FormComponent extends Component {
 		if ((field ? field === 'city' : true) && (!this.state.city)) {
 			formIsValid = false;
 			errors["city"] = "*Please Select any one city.";
+		}
+
+		if ((field ? field === 'selectedFile' : true) && (!this.state.selectedFile)) {
+			formIsValid = false;
+			errors["selectedFile"] = "*Please Upload an image.";
 		}
 
 		if ((field ? field === 'language' : true) && (!this.state.language)) {
@@ -152,9 +176,12 @@ class FormComponent extends Component {
 							<input type="radio" onBlur={(e) => this.handleBlur(e, 'gender')} onChange={(e) => { this.setState({ gender: e.target.value }) }} value="Female" name="gender" /> Female <span className="error-msg"> {this.state.errors.gender} </span><br /><br />
 					</div>
 					<div> Language : &nbsp;
-							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={(e) => { this.setState({ language: e.target.value }) }} value="English" name="english" /> English &nbsp;&nbsp;
-							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={(e) => { this.setState({ language: e.target.value }) }} value="Hindi" name="hindi" /> Hindi &nbsp;&nbsp;
-							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={(e) => { this.setState({ language: e.target.value }) }} value="Gujarati" name="gujarati" /> Gujarati <span className="error-msg"> {this.state.errors.language} </span><br /><br />
+							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={this.onChecked} value="English" name="english" /> English &nbsp;&nbsp;
+							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={this.onChecked} value="Hindi" name="hindi" /> Hindi &nbsp;&nbsp;
+							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={this.onChecked} value="Gujarati" name="gujarati" /> Gujarati <span className="error-msg"> {this.state.errors.language} </span><br /><br />
+					</div>
+					<div>Profile Picture : &nbsp;
+						<input type="file" onBlur={(e) => this.handleBlur(e, 'selectedFile')} onChange={this.fileChangedHandler}/><span className="error-msg">{this.state.errors.selectedFile}</span><br/><br/>
 					</div>
 					<div> Email : &nbsp;
 						<input type="email" name="email" value={this.state.email} onBlur={(e) => this.handleBlur(e, 'email')} onChange={(e) => { this.setState({ email: e.target.value }) }} placeholder="Email" /><span className="error-msg"> {this.state.errors.email} </span> <br /><br />
