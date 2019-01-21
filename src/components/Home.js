@@ -12,7 +12,7 @@ class Home extends Component {
 			<div>
 				<div className="w3-left-form">
 					<div>
-						<img className="w3-image-size" src="https://cdn.dribbble.com/users/1382625/screenshots/2985457/bm-monogram.png"/>
+						<img className="w3-image-size" src="https://cdn.dribbble.com/users/1382625/screenshots/2985457/bm-monogram.png" />
 					</div>
 					<div className="w3-link">
 						<Link to="/data-communication"><i class='fas fa-american-sign-language-interpreting'>&nbsp; Data-communication </i></Link>
