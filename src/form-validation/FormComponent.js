@@ -44,7 +44,7 @@ class FormComponent extends Component {
 	onChecked(e) {
     const options = this.state.language
     if (e.target.checked) {
-      options.push(e.target.value)
+			options.push(e.target.value)
 		} 
 		else{
 			options.pop(e.target.value)
@@ -199,9 +199,10 @@ class FormComponent extends Component {
 					<div> Language : &nbsp;
 							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={this.onChecked} value="English" name="english" /> English &nbsp;&nbsp;
 							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={this.onChecked} value="Hindi" name="hindi" /> Hindi &nbsp;&nbsp;
-							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={this.onChecked} value="Gujarati" name="gujarati" /> Gujarati <span className="error-msg"> {this.state.errors.language} </span><br /><br />
+							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={this.onChecked} value="Gujarati" name="gujarati" /> Gujarati
+							<span className="error-msg"> {this.state.errors.language} </span><br /><br />
 					</div>
-					<div>Profile Picture : &nbsp;
+					<div>Upload Picture : &nbsp;
 						<input type="file" onBlur={(e) => this.handleBlur(e, 'selectedFile')} onChange={this.fileChangedHandler}/><span className="error-msg">{this.state.errors.selectedFile}</span><br/><br/>
 					</div>
 					<div> Email : &nbsp;

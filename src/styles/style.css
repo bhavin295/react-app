@@ -20,6 +20,20 @@ body{
 	justify-content: center;
 }
 
+.w3-image-size{
+	padding-top: 6px;
+	height: 55px;
+	width: 60px;
+  margin: 0;
+  border-radius: 10px;
+  border: 1px gray solid;
+}
+
+.w3-link{
+	display:flex;
+	width:100%;
+	justify-content:space-around;
+}
 .w3-userlist-form {
 	padding: 32px;
 	margin-top: 2rem;
@@ -44,10 +58,11 @@ body{
 }
 
 .w3-left-form {
-	padding: 16px;
-    display: flex;
-    justify-content: space-evenly;
+		padding: 4px;
+		display: flex;
+		align-items: center;
 		width: 100%;
+		max-height: 60px;
     font-size: 14px;
     background-color: lightgray;
     box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
