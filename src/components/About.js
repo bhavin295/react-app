@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Contact from './Contact';
 import Summary from './Summary';
 import { Route, Link } from "react-router-dom";
+import Header from './Header';
 
 
 class About extends Component {
@@ -14,15 +15,16 @@ class About extends Component {
 		let { match } = this.props;
 		return (
 			<div>
-				<h3 className="font-color"> Welcome to About US </h3>
-				<Link to={`${match.url}/contact`}> Contact US </Link>
-				<br />
-				<Route exact path={`${match.path}/contact`} component={Contact}/>
-				<br />
-				<Link to={`${match.url}/summary`}> Summary </Link>
-				<br />
-				<Route exact path={`${match.path}/summary`} component={Summary} />
-
+				<Header />
+				<h3 className="font-color w3-text-center"> Welcome to About US </h3>
+				<div className="w3-text-center w3-contact-form">
+						<Link className="w3-link-reference" to={`${match.url}/summary`}> Summary </Link>
+						<Route exact path={`${match.path}/summary`} component={Summary} />
+				</div>
+				<div className="w3-text-center w3-contact-form">
+						<Link className="w3-link-reference" to={`${match.url}/contact`}> Contact </Link>
+						<Route exact path={`${match.path}/contact`} component={Contact}/>
+				</div>
 			</div>
 		)
 	}

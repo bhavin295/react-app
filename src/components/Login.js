@@ -56,8 +56,10 @@ class Login extends PureComponent {
 					<div>
 						<button className="w3-btn" type="submit"><b> Login </b></button>
 					</div><br/>
-					<div>
-						<Link to="/register"> Create account </Link>
+					<div style={{ marginLeft: '30px' }}>
+						 <Link className="w3-link-reference" to="/register">Create account</Link> 
+						 <Link className="w3-link-reference" to="">Forgot Password?</Link> <br/><br />
+						 <Link className="w3-link-reference" to="/home">Home</Link> 
 					</div>
 				</form>
 			</div>

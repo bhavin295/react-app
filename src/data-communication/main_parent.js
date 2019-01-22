@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import MainChild from './main_child'
+import React, { Component } from 'react';
+import MainChild from './main_child';
+import Header from './../components/Header';
 
 class MainParent extends Component {
 
@@ -27,6 +28,7 @@ class MainParent extends Component {
 	render() {
 		return (
 			<div>
+				<Header />
 				<br />
 				<span> Parent -> Name : {this.state.name} </span>
 					<MainChild 

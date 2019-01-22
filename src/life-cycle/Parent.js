@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import Child from './Child'
+import React, { Component } from 'react';
+import Child from './Child';
+import Header from './../components/Header';
 
 class Parent extends Component {
 
@@ -36,6 +37,7 @@ class Parent extends Component {
 		console.log("Parent : Render called...")
 		return (
 			<div>
+				<Header />
 				<br />
         		<span>Value in Parent Component State : {this.state.name}</span>
 				<Child onUpdate={this.onChange} number={this.state.number}/>

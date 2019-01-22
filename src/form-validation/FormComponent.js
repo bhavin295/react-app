@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class FormComponent extends Component {
 
@@ -21,7 +22,6 @@ class FormComponent extends Component {
 		this.handleBlur = this.handleBlur.bind(this);
 		this.fileChangedHandler = this.fileChangedHandler.bind(this);
 		this.onChecked = this.onChecked.bind(this);
-		
 	}
 
 	handleSubmit(event) {
@@ -50,7 +50,7 @@ class FormComponent extends Component {
 			options.pop(e.target.value)
 		}
     this.setState({ language: options })
-  }
+	}
 
 	validateForm(field) {
 		let errors = {};

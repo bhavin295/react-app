@@ -8,8 +8,6 @@ class Register extends Component {
 
 		return (
 			<div>
-					{/* <Link to="/about">About Us</Link> */}
-				{/* <h3 className="font-color"> Welcome to Register Page </h3> */}
 						<FormComponent />		
 			</div>
 		)

@@ -5,7 +5,7 @@ class Contact extends Component {
 	render() {
 		return (
 			<div>
-				<h4 className="font-color"> Contact Us </h4>
+				<br />
 				<span> Name : ABC </span><br />
 				<span> Number : 9874563210 </span><br />
 				<span> Email : test@user.com </span><br />
