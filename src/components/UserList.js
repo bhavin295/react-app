@@ -4,6 +4,7 @@ import UserUtils from './../utils/user';
 import { connect } from 'react-redux';
 import { setUserList, getAssignUser } from './../redux/actions/index';
 import AssignUser from './AssignUser';
+import Header from './Header';
 
 class UserList extends Component {
 
@@ -38,6 +39,7 @@ class UserList extends Component {
 		const { users } = this.state;
 		return (
 			<div>
+				<Header />
 				<h3 className="font-color w3-text-center"> Welcome Users... </h3>
 				<AssignUser />
 				<br />

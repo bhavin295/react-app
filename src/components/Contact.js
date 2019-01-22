@@ -6,9 +6,9 @@ class Contact extends Component {
 		return (
 			<div>
 				<br />
-				<span> Name : ABC </span><br />
-				<span> Number : 9874563210 </span><br />
-				<span> Email : test@user.com </span><br />
+				<div><i class="fas fa-user"></i> &nbsp;&nbsp;Bhavin Modi  </div><br />
+				<div><i class="fas fa-mobile-alt"></i> &nbsp;&nbsp;9874563210 </div><br />
+				<div><i class="fas fa-envelope"></i> &nbsp;&nbsp;&nbsp;test@user.com </div><br />
 			</div>
 		)
 	}

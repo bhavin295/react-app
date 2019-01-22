@@ -4,9 +4,7 @@ import Summary from './Summary';
 import { Route, Link } from "react-router-dom";
 import Header from './Header';
 
-
 class About extends Component {
-
 	constructor(props) {
 		super(props);
 	}

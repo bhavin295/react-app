@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import FormComponent from './../form-validation/FormComponent'
+import FormComponent from './../form-validation/FormComponent';
+import Header from './Header';
 
 class Register extends Component {
 
 	render() {
-
 		return (
 			<div>
-						<FormComponent />		
+				<Header />
+				<FormComponent />
 			</div>
 		)
 	}

@@ -27,29 +27,29 @@ class FormComponent extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		if (this.validateForm()) {
+			console.log("Data..", this.state);
 			alert("Form submitted");
 		}
-		console.log("Data..", this.state);
 	}
 
-	handleBlur(event, field){
+	handleBlur(event, field) {
 		event.preventDefault();
 		this.validateForm(field);
 	}
 
-	fileChangedHandler(event){
-		this.setState({selectedFile: event.target.files[0]})
+	fileChangedHandler(event) {
+		this.setState({ selectedFile: event.target.files[0] })
 	}
 
 	onChecked(e) {
-    const options = this.state.language
-    if (e.target.checked) {
+		const options = this.state.language
+		if (e.target.checked) {
 			options.push(e.target.value)
-		} 
-		else{
+		}
+		else {
 			options.pop(e.target.value)
 		}
-    this.setState({ language: options })
+		this.setState({ language: options })
 	}
 
 	validateForm(field) {
@@ -72,14 +72,14 @@ class FormComponent extends Component {
 			formIsValid = false;
 			errors["lastname"] = "*Please Enter your LastName.";
 		}
-		
+
 		if ((field ? field === 'lastname' : true) && (this.state.lastname.match(/^[a-zA-Z ]*$/)[0] == "")) {
 			formIsValid = false;
 			errors["lastname"] = "*Please Enter alphabet characters only.";
 		} else {
 			errors["lastname"] = "";
 		}
-	
+
 		if ((field ? field === 'address' : true) && (!this.state.address)) {
 			formIsValid = false;
 			errors["address"] = "*Please Enter Address.";
@@ -123,7 +123,7 @@ class FormComponent extends Component {
 		if ((field ? field === 'email' : true) && (!this.state.email)) {
 			formIsValid = false;
 			errors["email"] = "*Please Enter your Email-ID.";
-		}else{
+		} else {
 			errors["email"] = "";
 		}
 
@@ -134,7 +134,7 @@ class FormComponent extends Component {
 		// }else{
 		// 	errors["email"] = "";
 		// }
-		
+
 
 		if ((field ? field === 'password' : true) && (!this.state.password)) {
 			formIsValid = false;
@@ -148,7 +148,7 @@ class FormComponent extends Component {
 		// 	formIsValid = false;
 		// 	errors["password"] = "*Please Enter secure and strong password.";
 		// }
-	
+
 		if ((field ? field === 'confpwd' : true) && (!this.state.confpwd)) {
 			formIsValid = false;
 			errors["confpwd"] = "*Please confirm your password.";
@@ -158,8 +158,8 @@ class FormComponent extends Component {
 		}
 
 		if ((field ? field === 'confpwd' : true) && (this.state.confpwd !== this.state.password)) {
-				formIsValid = false;
-				errors["confpwd"] = "*Please Enter same password.";
+			formIsValid = false;
+			errors["confpwd"] = "*Please Enter same password.";
 		}
 
 		this.setState({
@@ -185,7 +185,7 @@ class FormComponent extends Component {
 					<div>
 						Pick your City : &nbsp;
 						<select value={this.state.city} onBlur={(e) => this.handleBlur(e, 'city')} onChange={(e) => { this.setState({ city: e.target.value }) }}>
-						  <option value=""> Select city... </option>
+							<option value=""> Select city... </option>
 							<option value="Ahmedabad">Ahmedabad</option>
 							<option value="Surat">Surat</option>
 							<option value="Vadodara">Vadodara</option>
@@ -203,7 +203,7 @@ class FormComponent extends Component {
 							<span className="error-msg"> {this.state.errors.language} </span><br /><br />
 					</div>
 					<div>Upload Picture : &nbsp;
-						<input type="file" onBlur={(e) => this.handleBlur(e, 'selectedFile')} onChange={this.fileChangedHandler}/><span className="error-msg">{this.state.errors.selectedFile}</span><br/><br/>
+						<input type="file" onBlur={(e) => this.handleBlur(e, 'selectedFile')} onChange={this.fileChangedHandler} /><span className="error-msg">{this.state.errors.selectedFile}</span><br /><br />
 					</div>
 					<div> Email : &nbsp;
 						<input type="email" name="email" value={this.state.email} onBlur={(e) => this.handleBlur(e, 'email')} onChange={(e) => { this.setState({ email: e.target.value }) }} placeholder="Email" /><span className="error-msg"> {this.state.errors.email} </span> <br /><br />
@@ -219,7 +219,7 @@ class FormComponent extends Component {
 					</div>
 				</form>
 			</div>
-		)	
+		)
 	}
 }
 
