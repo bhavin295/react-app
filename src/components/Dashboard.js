@@ -15,7 +15,7 @@ class Dashboard extends Component {
 				<Header />
 				<h3 className="font-color w3-text-center"> Welcome to Dashboard... </h3>
 				<div className="w3-login-form">
-					<Link to="/userlist"><a className="w3-link-reference"><i class="fas fa-users">&nbsp;&nbsp;UserList</i></a></Link><br /><br/>
+					<Link to="/userlist"><a className="w3-link-reference"><i class="fas fa-users">&nbsp;&nbsp;UserList</i></a></Link><br /><br />
 					<AssignUser /><br />
 				</div>
 			</div>

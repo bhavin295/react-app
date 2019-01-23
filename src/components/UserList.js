@@ -44,7 +44,7 @@ class UserList extends Component {
 				<AssignUser />
 				<br />
 				{this.state.loading ? <div className="w3-loading"> Loading... </div> : null}
-				<div className="w3-userlist-form">	
+				<div className="w3-userlist-form">
 					{
 						(users || []).map((val, index) => (
 							<div key={index}>
