@@ -46,7 +46,7 @@ class Login extends PureComponent {
 		return (
 			<div>
 				<form className="w3-login-form" onSubmit={this.handleSubmit}>
-					<h3 className="font-color"> Welcome to Login Page </h3>
+					<h3 className="font-color w3-mb-2"> Welcome to Login Page </h3>
 					<div> Username : &nbsp;
 							<input type="text" name="username" value={this.state.username} onChange={(e) => { this.setState({ username: e.target.value }) }} placeholder="Username" /> <span className="error-msg"> {this.state.errors.username}</span>
 					</div><br />
@@ -54,12 +54,13 @@ class Login extends PureComponent {
           				<input type="password" value={this.state.password} onChange={(e) => { this.setState({ password: e.target.value }) }} name="password" placeholder="Password" /><span className="error-msg"> {this.state.errors.password} </span>	<br /><br />
 					</div>
 					<div>
-						<button className="w3-btn" type="submit"><b> Login </b></button>
+						<button className="w3-btn w3-mt-1 w3-mb-1" type="submit"><b> <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login </b></button>
 					</div><br/>
 					<div style={{ marginLeft: '30px' }}>
-						 <Link className="w3-link-reference" to="/register">Create account</Link> 
-						 <Link className="w3-link-reference" to="">Forgot Password?</Link> <br/><br />
-						 <Link className="w3-link-reference" to="/home">Home</Link> 
+						
+					<Link to="/register"><a className="w3-link-reference"><i class="fas fa-user-plus">&nbsp;&nbsp;Create account</i></a></Link>
+					<Link to=""><a className="w3-link-reference"><i class="fas fa-key">&nbsp;&nbsp;Forgot Password?</i></a></Link><br/><br/>
+				  <Link to="/home"><a className="w3-link-reference"><i class="fas fa-home">&nbsp; Home</i></a></Link>
 					</div>
 				</form>
 			</div>

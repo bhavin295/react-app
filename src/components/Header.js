@@ -25,7 +25,12 @@ class Header extends Component {
 						<Link to="/home"><i class="fas fa-home">&nbsp; Home </i></Link>
 						<Link to="/dashboard"><i class="fas fa-tachometer-alt">&nbsp; Dashboard </i></Link>
 						<Link to="/about"><i class="fas fa-user">&nbsp; About Us </i></Link>
-						<Link to="/register"><i class="fas fa-user-plus"> Sign Up </i></Link>
+						{
+							!active ?
+								<Link to="/register"><i class="fas fa-user-plus">&nbsp;&nbsp;Sign Up </i></Link>
+								:
+								''
+						}
 						{
 							active ?
 								<Link to="/login"><a onClick={this._removeStorage} ><i class="fas fa-sign-out-alt">&nbsp; Logout </i> </a> </Link>

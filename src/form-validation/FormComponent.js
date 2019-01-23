@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 
 class FormComponent extends Component {
 
@@ -22,6 +23,7 @@ class FormComponent extends Component {
 		this.handleBlur = this.handleBlur.bind(this);
 		this.fileChangedHandler = this.fileChangedHandler.bind(this);
 		this.onChecked = this.onChecked.bind(this);
+		this.onClear = this.onClear.bind(this);
 	}
 
 	handleSubmit(event) {
@@ -30,6 +32,7 @@ class FormComponent extends Component {
 			console.log("Data..", this.state);
 			alert("Form submitted");
 		}
+		this.onClear(event);
 	}
 
 	handleBlur(event, field) {
@@ -50,6 +53,22 @@ class FormComponent extends Component {
 			options.pop(e.target.value)
 		}
 		this.setState({ language: options })
+	}
+
+	onClear(event) {
+		event.preventDefault();
+		this.setState({
+			firstname: '',
+			lastname: '',
+			address: '',
+			city: '',
+			selectedFile: '',
+			email: '',
+			gender: '',
+			language: [],
+			password: '',
+			confpwd: '',
+		})
 	}
 
 	validateForm(field) {
@@ -104,13 +123,13 @@ class FormComponent extends Component {
 			errors["city"] = "";
 		}
 
-		if ((field ? field === 'selectedFile' : true) && (!this.state.selectedFile)) {
-			formIsValid = false;
-			errors["selectedFile"] = "*Please Upload an image.";
-		}
-		else {
-			errors["selectedFile"] = "";
-		}
+		// if ((field ? field === 'selectedFile' : true) && (!this.state.selectedFile)) {
+		// 	formIsValid = false;
+		// 	errors["selectedFile"] = "*Please Upload an image.";
+		// }
+		// else {
+		// 	errors["selectedFile"] = "";
+		// }
 
 		if ((field ? field === 'language' : true) && (!this.state.language)) {
 			formIsValid = false;
@@ -171,8 +190,9 @@ class FormComponent extends Component {
 	render() {
 		return (
 			<div>
+				<Header />
 				<form className="w3-signup-form" onSubmit={this.handleSubmit} >
-					<h3 className="font-color"> Sign Up </h3>
+					<h3 className="font-color w3-mb-2"> Create account </h3>
 					<div> First Name : &nbsp;
 							<input type="text" name="firstname" onBlur={(e) => this.handleBlur(e, 'firstname')} value={this.state.firstname} onChange={(e) => { this.setState({ firstname: e.target.value }) }} placeholder="First Name" /> <span className="error-msg"> {this.state.errors.firstname}</span>
 					</div><br />
@@ -193,13 +213,35 @@ class FormComponent extends Component {
 						</select> <span className="error-msg"> {this.state.errors.city} </span>
 					</div><br />
 					<div> Gender : &nbsp;
-							<input type="radio" onBlur={(e) => this.handleBlur(e, 'gender')} onChange={(e) => { this.setState({ gender: e.target.value }) }} value="Male" name="gender" /> Male &nbsp;&nbsp;
-							<input type="radio" onBlur={(e) => this.handleBlur(e, 'gender')} onChange={(e) => { this.setState({ gender: e.target.value }) }} value="Female" name="gender" /> Female <span className="error-msg"> {this.state.errors.gender} </span><br /><br />
+							<input type="radio" onBlur={(e) => this.handleBlur(e, 'gender')} onChange={(e) => { this.setState({ gender: "Male" }) }} value={this.state.gender} checked={this.state.gender === "Male"} name="gender" /> Male &nbsp;&nbsp;
+							<input type="radio" onBlur={(e) => this.handleBlur(e, 'gender')} onChange={(e) => { this.setState({ gender: "Female" }) }} value={this.state.gender} checked={this.state.gender === "Female"} name="gender" /> Female <span className="error-msg"> {this.state.errors.gender} </span><br /><br />
 					</div>
 					<div> Language : &nbsp;
-							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={this.onChecked} value="English" name="english" /> English &nbsp;&nbsp;
-							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={this.onChecked} value="Hindi" name="hindi" /> Hindi &nbsp;&nbsp;
-							<input type="checkbox" onBlur={(e) => this.handleBlur(e, 'language')} onChange={this.onChecked} value="Gujarati" name="gujarati" /> Gujarati
+
+							<input
+							type="checkbox"
+							onBlur={(e) => this.handleBlur(e, 'language')}
+							onChange={this.onChecked}
+							checked={this.state.language.indexOf("English") !== -1}
+							value="English"
+							name="english"/> English &nbsp;&nbsp;
+
+							<input
+							type="checkbox"
+							onBlur={(e) => this.handleBlur(e, 'language')}
+							onChange={this.onChecked}
+							checked={this.state.language.indexOf("Hindi") !== -1}
+							value="Hindi"
+							name="hindi" /> Hindi &nbsp;&nbsp;
+
+							<input
+							type="checkbox"
+							onBlur={(e) => this.handleBlur(e, 'language')}
+							onChange={this.onChecked}
+							checked={this.state.language.indexOf("Gujarati") !== -1}
+							value="Gujarati"
+							name="gujarati" /> Gujarati
+							
 							<span className="error-msg"> {this.state.errors.language} </span><br /><br />
 					</div>
 					<div>Upload Picture : &nbsp;
@@ -215,7 +257,9 @@ class FormComponent extends Component {
           		<input type="password" value={this.state.confpwd} onBlur={(e) => this.handleBlur(e, 'confpwd')} onChange={(e) => { this.setState({ confpwd: e.target.value }) }} name="confpwd" placeholder="Confirm Password" /><span className="error-msg"> {this.state.errors.confpwd} </span><br /><br />
 					</div>
 					<div>
-						<button className="w3-btn" type="submit"><b> Submit </b></button>
+						<button className="w3-btn w3-mt-1" type="submit"><b><i class="fas fa-paper-plane"></i> &nbsp;&nbsp;Submit </b></button>
+						<button className="w3-clear-btn w3-mt-1" onClick={this.onClear}><b><i class="fas fa-eraser"></i> &nbsp;&nbsp;Clear </b></button>
+						<Link to="/home"><button className="w3-cancel-btn w3-mt-1"><b><i class="fas fa-times"></i>&nbsp;&nbsp; Cancel  </b></button> </Link>
 					</div>
 				</form>
 			</div>
