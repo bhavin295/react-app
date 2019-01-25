@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import UserUtils from './../utils/user';
+import passwordConnect from './../redux/connect/passwordConnect';
 
 class Login extends PureComponent {
 
@@ -22,26 +23,26 @@ class Login extends PureComponent {
 
 	componentWillMount() {
 		console.log("will mount called...")
-		const active  = localStorage.getItem('userData') ? true : false;
+		const active = sessionStorage.getItem('userData') ? true : false;
 		this._LoggedIn(active)
 	}
 
-	 _LoggedIn(active) {
-		if(active){
+	_LoggedIn(active) {
+		if (active) {
 			this.props.history.push('/dashboard');
-		} 
+		}
 	}
 
 	validateUser(user) {
-		if(this.state.username == 'test@user.com' && this.state.password == 'test@user2019' ){
-			localStorage.setItem("userData",JSON.stringify(user));
+		if (this.state.username == 'test@user.com' && this.state.password == this.props.NewPassword) {
+			sessionStorage.setItem("userData", JSON.stringify(user));
 			this.props.history.push('/dashboard');
 		}
-		else{
+		else {
 			alert("Invalid Username or Password...!!!")
 		}
 	}
-	
+
 	render() {
 		return (
 			<div>
@@ -55,12 +56,11 @@ class Login extends PureComponent {
 					</div>
 					<div>
 						<button className="w3-btn w3-mt-1 w3-mb-1" type="submit"><b> <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login </b></button>
-					</div><br/>
+					</div><br />
 					<div style={{ marginLeft: '30px' }}>
-						
-					<Link to="/register"><a className="w3-link-reference"><i class="fas fa-user-plus">&nbsp;&nbsp;Create account</i></a></Link>
-					<Link to=""><a className="w3-link-reference"><i class="fas fa-key">&nbsp;&nbsp;Forgot Password?</i></a></Link><br/><br/>
-				  <Link to="/home"><a className="w3-link-reference"><i class="fas fa-home">&nbsp; Home</i></a></Link>
+						<Link to="/register"><a className="w3-link-reference"><i class="fas fa-user-plus">&nbsp;&nbsp;Create account</i></a></Link>
+						<Link to="/forgot-password"><a className="w3-link-reference"><i class="fas fa-key">&nbsp;&nbsp;Forgot Password?</i></a></Link><br /><br />
+						<Link to="/home"><a className="w3-link-reference"><i class="fas fa-home">&nbsp; Home</i></a></Link>
 					</div>
 				</form>
 			</div>
@@ -68,4 +68,4 @@ class Login extends PureComponent {
 	}
 }
 
-export default Login;
+export default (passwordConnect(Login));

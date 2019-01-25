@@ -15,6 +15,7 @@ import Styles from './styles/style.css';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import store from './redux/store/index'
+import ForgotPassword from './components/ForgotPassword';
 
 const PrivateRoute = ({ component: Component, authed }) => {
 	return (
@@ -30,7 +31,7 @@ const PrivateRoute = ({ component: Component, authed }) => {
 	);
 };
 
-const active = localStorage.getItem('userData') ? true : false;
+const active = sessionStorage.getItem('userData') ? true : false;
 
 ReactDOM.render((
 	<Provider store={store}>
@@ -43,6 +44,7 @@ ReactDOM.render((
 				<Route exact path='/form-validation' component={FormComponent} />
 				<Route exact path='/login' component={Login} />
 				<Route exact path='/register' component={Register} />
+				<Route exact path='/forgot-password' component={ForgotPassword} />	
 				<Route path='/about' component={About} />
 				<PrivateRoute exact path='/userlist' authed={active} component={UserList} />
 				<PrivateRoute exact path='/dashboard' authed={active} component={Dashboard} />

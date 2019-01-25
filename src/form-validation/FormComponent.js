@@ -30,7 +30,7 @@ class FormComponent extends Component {
 		event.preventDefault();
 		if (this.validateForm()) {
 			console.log("Data..", this.state);
-			alert("Form submitted");
+			alert("Form successfully submitted...!!!");
 		}
 		this.onClear(event);
 	}

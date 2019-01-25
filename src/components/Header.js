@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import passwordConnect from './../redux/connect/passwordConnect';
 
 class Header extends Component {
 	constructor(props) {
@@ -8,11 +9,11 @@ class Header extends Component {
 	}
 
 	_removeStorage() {
-		localStorage.removeItem('userData');
+		sessionStorage.removeItem('userData');
 	}
 
 	render() {
-		const active = localStorage.getItem('userData') ? true : false;
+		const active = sessionStorage.getItem('userData') ? true : false;
 		return (
 			<div>
 				<div className="w3-header">
@@ -44,4 +45,4 @@ class Header extends Component {
 	}
 }
 
-export default Header;
+export default (passwordConnect(Header));
