@@ -18,6 +18,8 @@ class Dashboard extends Component {
 					<div className="w3-hr" />
 					<div className="w3-mt-2">
 						<Link to="/userlist"><a className="w3-link-reference"><i class="fas fa-users">&nbsp;&nbsp; UserList</i></a></Link><br /><br />
+						<Link to="/data-communication"><a className="w3-link-reference"><i class='fas fa-american-sign-language-interpreting'>&nbsp;&nbsp; Data-communication</i></a></Link><br /><br />
+						<Link to="/life-cycle"><a className="w3-link-reference"><i class="fas fa-recycle">&nbsp;&nbsp;&nbsp; Life-cycle</i></a></Link>
 					</div>
 				</div>
 				<div className="w3-dashboard-form w3-text-center">

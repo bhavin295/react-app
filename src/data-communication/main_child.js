@@ -13,9 +13,9 @@ class MainChild extends React.Component {
     return (
       <div>
 				<br />
-				Child -> First name : <input type="text" onChange={(e) => {this.props.onUpdate(e.target.value)}} value={this.props.name} />
+				Child -->  First name :- <input type="text" onChange={(e) => {this.props.onUpdate(e.target.value)}} value={this.props.name} />
 				<br /><br />
-				<span> Child -> Number : {this.props.number}</span>
+				<span> Child -->  Number :- {this.props.number}</span>
       </div>
     )
   }

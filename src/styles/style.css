@@ -70,12 +70,12 @@ body{
 
 .w3-link{
 	display:flex;
+	margin-left: 30%;
 	width:100%;
 	justify-content:space-around;
 }
 .w3-userlist-form {
 	padding: 32px;
-	margin-top: 2rem;
 	margin-right: auto;
 	margin-left: auto;
 	max-width: 650px;
@@ -129,7 +129,7 @@ body{
 	margin:0;
 	padding: 10px;
 	max-width: 100%;
-	height: 580px;
+	height: 600px;
 	width: 100%;
 	background-image: url('https://www.softuvo.com/wp-content/uploads/2018/07/webdevelopment-bg.jpg');
 	background-size: cover;
@@ -186,6 +186,30 @@ body{
 	float: right;
 }
 
+.w3-communication-form {
+	text-align: left; 
+	padding: 32px;
+	margin-top: 1rem;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 750px;
+	background-color:floralwhite;
+	border-radius: 15px;
+	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+}
+
+.w3-life-cycle-form {
+	text-align: left; 
+	padding: 32px;
+	margin-top: 1rem;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 600px;
+	background-color:floralwhite;
+	border-radius: 15px;
+	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+}
+
 .w3-login-form {
 	text-align: center; 
 	padding: 32px;
@@ -227,4 +251,34 @@ body{
 	left: 0;
 	text-align: center;
 	padding-top: 20%;
+}
+
+/* Gallary styles */
+
+.gallery {
+	display: flex;
+    flex-wrap: wrap;
+    /* margin: 0rem 0rem; */
+    padding: 1rem 6rem 1rem 6rem;
+}
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 0 0 17rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
 }

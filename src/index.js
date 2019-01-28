@@ -16,6 +16,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import store from './redux/store/index'
 import ForgotPassword from './components/ForgotPassword';
+import Gallary from './components/gallary';
 
 const PrivateRoute = ({ component: Component, authed }) => {
 	return (
@@ -39,14 +40,15 @@ ReactDOM.render((
 			<Switch>
 				<Route exact path='/' component={Home} />
 				<Route exact path='/home' component={Home} />
-				<Route exact path='/life-cycle' component={Parent} />
-				<Route exact path='/data-communication' component={MainParent} />
 				<Route exact path='/form-validation' component={FormComponent} />
 				<Route exact path='/login' component={Login} />
 				<Route exact path='/register' component={Register} />
 				<Route exact path='/forgot-password' component={ForgotPassword} />	
 				<Route path='/about' component={About} />
+				<Route path='/gallary' component={Gallary} />
 				<PrivateRoute exact path='/userlist' authed={active} component={UserList} />
+				<PrivateRoute exact path='/life-cycle' authed={active} component={Parent} />
+				<PrivateRoute exact path='/data-communication'authed={active} component={MainParent} />
 				<PrivateRoute exact path='/dashboard' authed={active} component={Dashboard} />
 			</Switch>
 		</Router>

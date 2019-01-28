@@ -9,7 +9,7 @@ class Parent extends Component {
 		console.log("Parent : Constructor called...")
 		this.state = {
 			name: " ",
-			number:10,
+			number: 10,
 		};
 		this.onChange = this.onChange.bind(this);
 	}
@@ -27,11 +27,11 @@ class Parent extends Component {
 	}
 
 	onChange(val) {
-    this.setState({
+		this.setState({
 			name: val,
-			number:11
-    })
-  };
+			number: 11
+		})
+	};
 
 	render() {
 		console.log("Parent : Render called...")
@@ -39,8 +39,33 @@ class Parent extends Component {
 			<div>
 				<Header />
 				<br />
-        		<span>Value in Parent Component State : {this.state.name}</span>
-				<Child onUpdate={this.onChange} number={this.state.number}/>
+				<div className="w3-life-cycle-form">
+					<h3 className="font-color w3-text-center"> * React Life-cycle example *  </h3>
+					<span>Value in Parent Component State : {this.state.name}</span>
+					<Child onUpdate={this.onChange} number={this.state.number} />
+					<div>
+						<p>
+							<ul>
+								<h4 className="font-color"> * Mounting... </h4>
+								<li>Parent : Constructor called...</li>
+								<li>Parent : In ComponentWillMount method...</li>
+								<li>Parent : Render called...</li>
+								<li>Child : Constructor called...</li>
+								<li>Child : In ComponentWillMount method...</li>
+								<li>Child : Render called...</li>
+								<li>Child : In ComponentDidMount method...</li>
+								<li>Parent : In ComponentDidMount method...</li>
+								<h4 className="font-color"> * Updating... </h4>
+								<li>Parent : In componentWillUpdate method...</li>
+								<li>Parent : Render called...</li>
+								<li>Child : In componentWillReceiveProps method...</li>
+								<li>Child : In shouldComponentUpdate method...</li>
+								<li>Child : Render called...</li>
+							</ul>
+						</p>
+					</div>
+
+				</div>
 			</div>
 		)
 	}
