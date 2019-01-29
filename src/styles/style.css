@@ -74,6 +74,19 @@ body{
 	width:100%;
 	justify-content:space-around;
 }
+
+.w3-icon{
+	height: 25px;
+  width: 25px;
+	border-radius: 100%;
+	margin-right: 10px;
+}
+
+.w3-text{
+	display: flex;
+  align-items: center;
+}
+
 .w3-userlist-form {
 	padding: 32px;
 	margin-right: auto;
@@ -257,15 +270,13 @@ body{
 
 .gallery {
 	display: flex;
-    flex-wrap: wrap;
-    /* margin: 0rem 0rem; */
-    padding: 1rem 6rem 1rem 6rem;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 16px;
 }
 
 .gallery-item {
-	/* Minimum width of 24rem and grow to fit available space */
 	flex: 0 0 17rem;
-	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
 	margin: 1rem;
 	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
 	overflow: hidden;

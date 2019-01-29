@@ -7,9 +7,14 @@ class Gallary extends Component {
 			<div>
 				<Header />
 				<h3 className="font-color w3-text-center"> Welcome to Gallary </h3>
+
 				<div className="gallery">
 					<div className="gallery-item">
-						<img className="gallery-image" src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop" />
+						<img className="gallery-image" src="http://www.circlectennis.com/wp-content/uploads/2018/02/website-design-essex.jpg" />
+					</div>
+
+					<div className="gallery-item">
+						<img className="gallery-image" src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/11/1447899031featured-image-e1447899081326.jpg" />
 					</div>
 
 					<div className="gallery-item">
@@ -22,10 +27,6 @@ class Gallary extends Component {
 
 					<div className="gallery-item">
 						<img className="gallery-image" src="https://designroast.org/wp-content/uploads/2015/08/ways-to-make-website-more-professional.jpg" />
-					</div>
-
-					<div className="gallery-item">
-						<img className="gallery-image" src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/11/1447899031featured-image-e1447899081326.jpg" />
 					</div>
 
 					<div className="gallery-item">

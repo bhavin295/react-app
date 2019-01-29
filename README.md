@@ -94,4 +94,8 @@
 
 	(2) npm install redux --save
 
+	(3) npm install --save redux-logger
+
+			- Used for redux logs.
+
 			

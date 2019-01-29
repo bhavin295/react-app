@@ -17,6 +17,7 @@ import { createStore } from 'redux';
 import store from './redux/store/index'
 import ForgotPassword from './components/ForgotPassword';
 import Gallary from './components/gallary';
+import SelectComponent from './components/SelectComponent';
 
 const PrivateRoute = ({ component: Component, authed }) => {
 	return (
@@ -42,6 +43,7 @@ ReactDOM.render((
 				<Route exact path='/home' component={Home} />
 				<Route exact path='/form-validation' component={FormComponent} />
 				<Route exact path='/login' component={Login} />
+				<Route exact path='/select' component={SelectComponent} />
 				<Route exact path='/register' component={Register} />
 				<Route exact path='/forgot-password' component={ForgotPassword} />	
 				<Route path='/about' component={About} />
