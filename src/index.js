@@ -45,12 +45,12 @@ ReactDOM.render((
 				<Route exact path='/login' component={Login} />
 				<Route exact path='/select' component={SelectComponent} />
 				<Route exact path='/register' component={Register} />
-				<Route exact path='/forgot-password' component={ForgotPassword} />	
+				<Route exact path='/forgot-password' component={ForgotPassword} />
 				<Route path='/about' component={About} />
 				<Route path='/gallary' component={Gallary} />
 				<PrivateRoute exact path='/userlist' authed={active} component={UserList} />
 				<PrivateRoute exact path='/life-cycle' authed={active} component={Parent} />
-				<PrivateRoute exact path='/data-communication'authed={active} component={MainParent} />
+				<PrivateRoute exact path='/data-communication' authed={active} component={MainParent} />
 				<PrivateRoute exact path='/dashboard' authed={active} component={Dashboard} />
 			</Switch>
 		</Router>

@@ -132,10 +132,6 @@ body{
 	box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 }
 
-.w3-underline:hover{
-	text-decoration: underline;
-}
-
 .w3-main-form {
 	text-align: center;
 	color: white;
@@ -236,7 +232,6 @@ body{
 }
 
 .w3-form {
-	/* text-align: center;  */
 	padding: 16px;
 	margin-top: 5px;
 	width: 229px;
@@ -266,7 +261,7 @@ body{
 	padding-top: 20%;
 }
 
-/* Gallary styles */
+/* start of gallary styles */
 
 .gallery {
 	display: flex;
@@ -293,3 +288,5 @@ body{
 .gallery-image:hover {
 	transform: scale(1.15);
 }
+
+/* End of gallary style */
