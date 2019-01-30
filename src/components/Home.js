@@ -8,7 +8,7 @@ const slideImages = [
 	'https://www.eded.ca/wp-content/uploads/2017/09/webdesign-services.jpg',
 	'http://www.duproduction.com.au/wp-content/uploads/2013/11/slider-06.jpg',
 	'https://emmsalabsdigital.com.ng/wp-content/uploads/2017/06/slider11-1.png',
-	'https://design.saveonhosting.com/images/slider/slider_4.jpg'
+	'http://modestowebdesigns.com/wp-content/uploads/2015/07/website-design-slider-background-stockton-1.jpg'
 ];
 
 const properties = {
@@ -23,7 +23,6 @@ class Home extends Component {
 	constructor(props) {
 		super(props);
 	}
-
 	render() {
 		return (
 			<div>

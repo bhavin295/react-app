@@ -43,6 +43,8 @@ class Parent extends Component {
 					<h3 className="font-color w3-text-center"> * React Life-cycle example *  </h3>
 					<span>Value in Parent Component State : {this.state.name}</span>
 					<Child onUpdate={this.onChange} number={this.state.number} />
+					<img className="w3-mt-2" style={{height:'400px', width:'900px'}} src="https://cdn-images-1.medium.com/max/1000/1*sn-ftowp0_VVRbeUAFECMA.png" />
+					<img className="w3-mt-2" style={{height:'400px', width:'900px'}} src="https://cdn-images-1.medium.com/max/2000/1*lINPzI9FsJnay2_fm4vmzA.png" />
 					<div>
 						<p>
 							<ul>
