@@ -24,7 +24,7 @@ class Dashboard extends Component {
 				</div>
 				<div className="w3-dashboard-form w3-text-center">
 					<h3 className="font-color"> Welcome to Dashboard... </h3>
-					<img style={{ height: "500px", width: '900px', display: 'flex', marginLeft: '12%' }} className="w3-mt-2 w3-text-center" src="https://www.advancedmd.com/wp-content/uploads/2017/12/advancedmd-screenshot-donutLibrary.jpg" />
+					{/* <img style={{ height: "500px", width: '900px', display: 'flex', marginLeft: '12%' }} className="w3-mt-2 w3-text-center" src="https://www.advancedmd.com/wp-content/uploads/2017/12/advancedmd-screenshot-donutLibrary.jpg" /> */}
 				</div>
 			</div>
 		)
