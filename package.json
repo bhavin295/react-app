@@ -29,7 +29,7 @@
 		"webpack-merge": "^4.1.5"
 	},
 	"scripts": {
-		"build": "webpack --config webpack.prod.js",
+		"build": "webpack --config webpack.dev.js",
 		"start": "./node_modules/.bin/webpack-dev-server --config webpack.dev.js --watch-content-base"
 	},
 	"repository": {

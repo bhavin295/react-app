@@ -22,7 +22,6 @@ class Login extends PureComponent {
 	}
 
 	componentWillMount() {
-		console.log("will mount called...")
 		const active = sessionStorage.getItem('userData') ? true : false;
 		this._LoggedIn(active)
 	}

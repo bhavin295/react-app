@@ -29,7 +29,7 @@ class FormComponent extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		if (this.validateForm()) {
-			console.log("Data..", this.state);
+			console.log("Data...", this.state);
 			alert("Form successfully submitted...!!!");
 		}
 		this.onClear(event);

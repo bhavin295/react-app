@@ -16,11 +16,11 @@ class About extends Component {
 				<Header />
 				<h3 className="font-color w3-text-center"> Welcome to About US </h3>
 				<div className="w3-text-center w3-contact-form">
-						<Link className="w3-link-reference" to={`${match.url}/summary`}> Summary </Link>
+						<Link className="w3-link-reference" to={`${match.url}/summary`}><b> Summary </b></Link>
 						<Route exact path={`${match.path}/summary`} component={Summary} />
 				</div>
 				<div className="w3-text-center w3-contact-form">
-						<Link className="w3-link-reference" to={`${match.url}/contact`}> Contact </Link>
+						<Link className="w3-link-reference" to={`${match.url}/contact`}><b> Contact </b></Link>
 						<Route exact path={`${match.path}/contact`} component={Contact}/>
 				</div>
 			</div>

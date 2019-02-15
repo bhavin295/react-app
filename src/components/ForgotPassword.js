@@ -20,7 +20,7 @@ class ForgotPassword extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		if (this.validateForm()) {
-			console.log("Data..", this.state);
+			console.log("Value...", this.state);
 			alert("Password successfully updated...!!!");
 			this.props.history.push('/login')
 		}

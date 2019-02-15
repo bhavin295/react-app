@@ -19,11 +19,11 @@ import ForgotPassword from './components/ForgotPassword';
 import Gallary from './components/gallary';
 import SelectComponent from './components/SelectComponent';
 
-const PrivateRoute = ({ component: Component, authed }) => {
+const PrivateRoute = ({ component: Component }) => {
 	return (
 		<Route
 			render={props =>
-				authed ? (
+				sessionStorage.getItem('userData') ? (
 					<Component {...props} />
 				) : (
 						<Redirect to={{ pathname: "/login" }} />
@@ -33,25 +33,23 @@ const PrivateRoute = ({ component: Component, authed }) => {
 	);
 };
 
-const active = sessionStorage.getItem('userData') ? true : false;
-
 ReactDOM.render((
 	<Provider store={store}>
 		<Router history={browserHistory} >
 			<Switch>
 				<Route exact path='/' component={Home} />
-				<Route exact path='/home' component={Home} />
-				<Route exact path='/form-validation' component={FormComponent} />
-				<Route exact path='/login' component={Login} />
-				<Route exact path='/select' component={SelectComponent} />
-				<Route exact path='/register' component={Register} />
-				<Route exact path='/forgot-password' component={ForgotPassword} />
-				<Route exact path='/gallary' component={Gallary} />
+				<Route path='/home' component={Home} />
+				<Route path='/form-validation' component={FormComponent} />
+				<Route path='/login' component={Login} />
+				<Route path='/select' component={SelectComponent} />
+				<Route path='/register' component={Register} />
+				<Route path='/forgot-password' component={ForgotPassword} />
+				<Route path='/gallary' component={Gallary} />
 				<Route path='/about' component={About} />
-				<PrivateRoute exact path='/userlist' authed={active} component={UserList} />
-				<PrivateRoute exact path='/life-cycle' authed={active} component={Parent} />
-				<PrivateRoute exact path='/data-communication' authed={active} component={MainParent} />
-				<PrivateRoute exact path='/dashboard' authed={active} component={Dashboard} />
+				<PrivateRoute path='/userlist' component={UserList} />
+				<PrivateRoute path='/life-cycle' component={Parent} />
+				<PrivateRoute path='/data-communication' component={MainParent} />
+				<PrivateRoute path='/dashboard' component={Dashboard} />
 			</Switch>
 		</Router>
 	</Provider>
