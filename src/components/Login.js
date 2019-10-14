@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import UserUtils from './../utils/user';
 import passwordConnect from './../redux/connect/passwordConnect';
+import Header from './Header';
 
 class Login extends PureComponent {
 
@@ -33,7 +34,7 @@ class Login extends PureComponent {
 	}
 
 	validateUser(user) {
-		if (this.state.username == 'test@user.com' && this.state.password == this.props.NewPassword) {
+		if (this.state.username === 'test@user.com' && this.state.password === this.props.NewPassword) {
 			sessionStorage.setItem("userData", JSON.stringify(user));
 			this.props.history.push('/dashboard');
 		}
@@ -44,7 +45,8 @@ class Login extends PureComponent {
 
 	render() {
 		return (
-			<div>
+			<div className="bg-banner">
+				<Header />
 				<form className="w3-login-form" onSubmit={this.handleSubmit}>
 					<h3 className="font-color w3-mb-2"> Welcome to Login Page </h3>
 					<div> Username : &nbsp;

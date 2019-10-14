@@ -1,44 +1,92 @@
-body{
-	background-image: url('http://doanarae.com/doanarae/9064-hd-white-wallpaper_26636.jpg');
-	background-size: cover;
+body {
 	margin-top: 0px !important;
-	margin-left: 2px !important;
+	margin-left: 1px !important;
+	/* margin-right: 0px !important; */
+}
+
+.bg-banner {
+	background: url('http://doanarae.com/doanarae/9064-hd-white-wallpaper_26636.jpg')no-repeat center/cover;
+	min-height: 100vh;
+	background-size: cover;
+}
+
+.LeftMenu .logo-image {
+	width: 250px;
+}
+
+.dash_grid aside {
+	width: 250px;
+}
+
+.dash_grid main {
+	background: #eee;
+	flex: 1;
+}
+
+.dash_grid aside {
+	background: #333;
+}
+
+.dash_grid aside ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.dash_grid aside ul li a {
+	text-decoration: none;
+	padding: 10px 15px;
+	display: block;
+	color: #fff;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	opacity: 0.9;
+	transition: .3s;
+}
+
+.dash_grid aside ul li a i {
+	margin-right: 15px;
+}
+
+.dash_grid aside ul li a:hover, .dash_grid aside ul li.active a {
+	background: #e46a22;
+	opacity: 1 !important;
+	border-color: transparent;
 }
 
 .w3-hr {
 	border-bottom: 1px solid rgba(204, 204, 204, 0.42);
-  margin: 10px auto;
+	margin: 10px auto;
 }
 
-.w3-mb-0{
+.w3-mb-0 {
 	margin-bottom: 0rem;
 }
 
-.w3-mb-1{
+.w3-mb-1 {
 	margin-bottom: 1rem;
 }
 
-.w3-mb-2{
+.w3-mb-2 {
 	margin-bottom: 2rem;
 }
 
-.w3-mb-3{
+.w3-mb-3 {
 	margin-bottom: 3rem;
 }
 
-.w3-mt-0{
+.w3-mt-0 {
 	margin-top: 0rem;
 }
 
-.w3-mt-1{
+.w3-mt-1 {
 	margin-top: 1rem;
 }
 
-.w3-mt-2{
+.w3-mt-2 {
 	margin-top: 2rem;
 }
 
-.w3-mt-3{
+.w3-mt-3 {
 	margin-top: 3rem;
 }
 
@@ -46,45 +94,45 @@ body{
 	color: maroon;
 }
 
-.w3-text-center{
+.w3-text-center {
 	text-align: center;
 }
 
-.error-msg{
+.error-msg {
 	color: red;
 }
 
-.w3-flex{
+.w3-flex {
 	display: flex;
 	justify-content: center;
 }
 
-.w3-image-size{
+.w3-image-size {
 	padding-top: 6px;
 	height: 55px;
 	width: 60px;
-  margin: 0;
-  border-radius: 10px;
-  border: 1px gray solid;
+	margin: 0;
+	border-radius: 10px;
+	border: 1px gray solid;
 }
 
-.w3-link{
-	display:flex;
+.w3-link {
+	display: flex;
 	margin-left: 30%;
-	width:100%;
-	justify-content:space-around;
+	width: 100%;
+	justify-content: space-around;
 }
 
-.w3-icon{
+.w3-icon {
 	height: 25px;
-  width: 25px;
+	width: 25px;
 	border-radius: 100%;
 	margin-right: 10px;
 }
 
-.w3-text{
+.w3-text {
 	display: flex;
-  align-items: center;
+	align-items: center;
 }
 
 .w3-userlist-form {
@@ -94,11 +142,11 @@ body{
 	max-width: 650px;
 	background-color: floralwhite;
 	border-radius: 10px;
-	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+	box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
 .w3-signup-form {
-	text-align: center; 
+	text-align: center;
 	padding: 32px;
 	margin-top: 1rem;
 	margin-right: auto;
@@ -106,11 +154,11 @@ body{
 	max-width: 550px;
 	background-color: floralwhite;
 	border-radius: 15px;
-	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+	box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
 .w3-contact-form {
-	text-align: center; 
+	text-align: center;
 	padding: 32px;
 	margin-top: 2rem;
 	margin-right: auto;
@@ -118,10 +166,10 @@ body{
 	max-width: 350px;
 	background-color: floralwhite;
 	border-radius: 15px;
-	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+	box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
-.w3-header{
+.w3-header {
 	padding: 4px;
 	display: flex;
 	align-items: center;
@@ -129,44 +177,45 @@ body{
 	max-height: 60px;
 	font-size: 14px;
 	background-color: lightgray;
-	box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+	box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
-.w3-btn{
+.w3-btn {
 	font-size: 13px;
 	height: 35px;
 	width: 90px;
 	border-radius: 5px;
-	color:white;
+	color: white;
 	background-color: #65cea7;
 }
 
-.w3-clear-btn{
+.w3-clear-btn {
 	font-size: 13px;
 	height: 35px;
 	width: 90px;
 	border-radius: 5px;
 	margin-left: 10px;
-	color:white;
+	color: white;
 	background-color: lightskyblue;
 }
 
-.w3-cancel-btn{
+.w3-cancel-btn {
 	font-size: 13px;
 	height: 35px;
 	width: 90px;
 	border-radius: 5px;
 	margin-left: 10px;
-	color:white;
-	background-color: #fc8675;;
+	color: white;
+	background-color: #fc8675;
+	;
 }
 
-.w3-link-reference{
+.w3-link-reference {
 	font-size: 14px;
 	margin-right: 25px;
 }
 
-.w3-assign-btn{
+.w3-assign-btn {
 	height: 26px;
 	width: 70px;
 	border-radius: 3px;
@@ -174,7 +223,7 @@ body{
 	float: right;
 }
 
-.w3-assigned-btn{
+.w3-assigned-btn {
 	height: 26px;
 	width: 70px;
 	border-radius: 3px;
@@ -183,39 +232,39 @@ body{
 }
 
 .w3-communication-form {
-	text-align: left; 
+	text-align: left;
 	padding: 32px;
 	margin-top: 1rem;
 	margin-right: auto;
 	margin-left: auto;
 	max-width: 750px;
-	background-color:floralwhite;
+	background-color: floralwhite;
 	border-radius: 15px;
-	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+	box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
 .w3-life-cycle-form {
-	text-align: left; 
+	text-align: left;
 	padding: 32px;
 	margin-top: 1rem;
 	margin-right: auto;
 	margin-left: auto;
 	max-width: 900px;
-	background-color:white;
+	background-color: white;
 	border-radius: 15px;
-	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+	box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
 .w3-login-form {
-	text-align: center; 
+	text-align: center;
 	padding: 32px;
 	margin-top: 2rem;
 	margin-right: auto;
 	margin-left: auto;
 	max-width: 500px;
-	background-color:floralwhite;
+	background-color: floralwhite;
 	border-radius: 15px;
-	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+	box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
 .w3-form {
@@ -223,8 +272,8 @@ body{
 	margin-top: 5px;
 	width: 229px;
 	height: 590px;
-	background-color:floralwhite;
-	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+	background-color: floralwhite;
+	box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
 .w3-dashboard-form {
@@ -232,12 +281,12 @@ body{
 	padding-top: 8px;
 	height: 614px;
 	margin-top: 5px;
-	background-color:white;
-	box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+	background-color: white;
+	box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
 }
 
-.w3-loading{
- 	width: 100%;
+.w3-loading {
+	width: 100%;
 	height: 100%;
 	position: fixed;
 	background: rgba(170, 170, 170, 0.79);
@@ -258,10 +307,11 @@ body{
 }
 
 .gallery-item {
-	flex: 0 0 17rem;
+	flex: 1 0 19rem;
 	margin: 1rem;
-	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	box-shadow: 0.3rem 0.6rem 0.6rem rgba(0, 0, 0, 0.3);
 	overflow: hidden;
+	border-radius: 10px;
 }
 
 .gallery-image {
@@ -277,3 +327,72 @@ body{
 }
 
 /* End of gallary style */
+
+div.ReactTable .rt-thead .rt-th.-sort-asc, div.ReactTable .rt-thead .rt-td.-sort-asc {
+	box-shadow: none;
+}
+
+div.ReactTable .rt-thead .rt-th.-sort-desc, div.ReactTable .rt-thead .rt-td.-sort-desc {
+	box-shadow: none;
+}
+
+.rt-th.rt-resizable-header.-sort-asc.-cursor-pointer {
+	position: relative;
+}
+
+.rt-th.rt-resizable-header.-sort-asc.-cursor-pointer::after {
+	font-family: "Font Awesome 5 Free";
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+	content: "\f007";
+	position: absolute;
+	top: 42%;
+	right: 15px;
+	transform: translateY(-50%);
+}
+
+.rt-th.rt-resizable-header.-sort-desc.-cursor-pointer {
+	position: relative;
+}
+
+.rt-th.rt-resizable-header.-sort-desc.-cursor-pointer::after {
+	font-family: "Font Awesome 5 Free";
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+	content: "\f007";
+	position: absolute;
+	top: 42%;
+	right: 15px;
+	transform: translateY(-50%);
+}
+
+.rt-tr-group {
+	text-align: center;
+	height: 45px;
+	padding-top: 5px;
+}
+
+.rt-thead.-header {
+	height: 45px;
+	padding-top: 6px;
+	background: #801300bf;
+	color: white;
+}
+
+.ReactTable .rt-thead .rt-th, .ReactTable .rt-thead .rt-td{
+	padding: 7px 5px;
+}
+
+.bg-assigned{
+	color: #801300bf;
+}

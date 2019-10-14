@@ -4,42 +4,43 @@ import Header from './../components/Header';
 class Gallary extends Component {
 	render() {
 		return (
-			<div>
+			<div className="bg-banner">
 				<Header />
 				<h3 className="font-color w3-text-center"> Welcome to Gallary </h3>
 
 				<div className="gallery">
 					<div className="gallery-item">
-						<img className="gallery-image" src="http://www.circlectennis.com/wp-content/uploads/2018/02/website-design-essex.jpg" />
+						<img className="gallery-image" src="https://image.freepik.com/free-photo/female-hand-typing-keyboard-laptop_1150-15742.jpg" />
 					</div>
 
 					<div className="gallery-item">
-						<img className="gallery-image" src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/11/1447899031featured-image-e1447899081326.jpg" />
+						<img className="gallery-image" src="https://image.freepik.com/free-photo/happy-male-writing-positive-mail-client_1163-3986.jpg" />
 					</div>
 
 					<div className="gallery-item">
-						<img className="gallery-image" src="https://blog.flippa.com/wp-content/uploads/2015/08/how-to-sell-websites-with-no-traffic.jpg" />
+						<img className="gallery-image" src="https://image.freepik.com/free-photo/diverse-corporate-employees-group-working-together-using-computers-office_1163-5124.jpg" />
 					</div>
 
 					<div className="gallery-item">
-						<img className="gallery-image" src="https://images.freecreatives.com/wp-content/uploads/2016/12/Free-Professional-Background-Image-for-Websites.jpeg" />
+						<img className="gallery-image" src="https://image.freepik.com/free-photo/happy-company-employees-using-laptop-office_1163-5372.jpg" />
 					</div>
 
 					<div className="gallery-item">
-						<img className="gallery-image" src="https://designroast.org/wp-content/uploads/2015/08/ways-to-make-website-more-professional.jpg" />
+						<img className="gallery-image" src="https://image.freepik.com/free-photo/team-professional-developer-programmer-cooperation-meeting-brainstorming-programming-website-working-software-coding-technology-writing-codes-database_122498-115.jpg" />
 					</div>
 
 					<div className="gallery-item">
-						<img className="gallery-image" src="https://www.viralservice.com/wp/wp-content/uploads/2016/02/hero-website-copywriting.jpg" />
+						<img className="gallery-image" src="https://image.freepik.com/free-photo/african-american-ceo-giving-presentation-corporate-team-meeting-concept_1163-4880.jpg" />
 					</div>
 
 					<div className="gallery-item">
-						<img className="gallery-image" src="https://www.scribizzy.com/wp-content/uploads/2012/03/website-copywriting-04.jpg" />
+						<img className="gallery-image" src="https://image.freepik.com/free-photo/casual-entrepreneur-explaining-business-project-his-coworker_1163-3932.jpg" />
 					</div>
 
 					<div className="gallery-item">
-						<img className="gallery-image" src="https://cdn.buyhttp.com/wp-content/uploads/2017/11/wp-admin.jpg" />
+						<img className="gallery-image" src="https://image.freepik.com/free-photo/marketing-strategy-planning-strategy-concept_53876-42950.jpg" />
 					</div>
+
 				</div>
 			</div>
 		)

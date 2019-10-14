@@ -10,13 +10,13 @@ const UserUtils = {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(data)
-		}).then(async (response) => {
+		}).then(async (response) => {			
 			return await response.json();
 		});
 	},
 
 	getAllUserList :  function(data){
-		return fetch(API_URL + 'user/list?page=1&limit=20&status=true',{
+		return fetch('http://jsonplaceholder.typicode.com/users',{
 				method:'GET',
 				headers: {
 					Accept: 'application/json',

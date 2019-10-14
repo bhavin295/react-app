@@ -4,6 +4,8 @@ import moment from 'moment';
 import UserUtils from './../utils/user';
 import { connect } from 'react-redux';
 import { setUserList, getAssignUser } from './../redux/actions/index';
+import ReactTable from 'react-table'
+import 'react-table/react-table.css'
 import AssignUser from './AssignUser';
 import Header from './Header';
 
@@ -23,9 +25,9 @@ class UserList extends Component {
 			loading: true,
 		})
 		UserUtils.getAllUserList(active.token).then((response) => {
-			this.props.dispatch(setUserList(response.data));
+			this.props.dispatch(setUserList(response));
 			this.setState({
-				users: response.data,
+				users: response,
 				loading: false,
 			})
 		});
@@ -33,31 +35,85 @@ class UserList extends Component {
 
 	_assignUser(val) {
 		this.props.dispatch(getAssignUser(val));
-		alert("Assigned user : " + val)
+		this.props.history.push('/dashboard')
 	}
 
 	render() {
 		const { users } = this.state;
+		const columns = [
+			{
+				Header: 'User Id',
+				accessor: 'userId',
+				width: 150,
+				Cell: ({ original }) => {
+					return original.id ? original.id : null;
+				}
+			},
+			{
+				Header: 'Name',
+				accessor: 'name',
+				width: 200,
+				Cell: ({ original }) => {
+					return original.name ? original.name : null;
+				}
+			},
+			{
+				Header: 'Email Id',
+				accessor: 'email',
+				width: 250,
+				Cell: ({ original }) => {
+					return original.email ? original.email : null;
+				}
+			},
+			{
+				Header: 'Phone Number',
+				accessor: 'phone',
+				width: 250,
+				Cell: ({ original }) => {
+					return original.phone ? original.phone : null;
+				}
+			},
+			{
+				Header: 'Address',
+				accessor: 'address',
+				width: 200,
+				Cell: ({ original }) => {
+					return original.address.city ? original.address.city : null;
+				}
+			},
+			{
+				Header: 'Website',
+				accessor: 'website',
+				width: 250,
+				Cell: ({ original }) => {
+					return original.website ? original.website : null;
+				}
+			},
+			{
+				Header: "Action",
+				accessor: "action",
+				width: 100,
+				Cell: ({ original }) => {
+					return (
+						<div className="cursor-pointer">
+							<a onClick={() => this._assignUser(original.name)}>
+								<b>	{original.name === this.props.assignUserName ? <i className="fas fa-user fa-lg bg-assigned"></i> : <i className="far fa-user fa-lg"></i>} </b></a>
+						</div>
+					);
+				}
+			}
+		]
 		return (
 			<div>
 				<Header />
 				<h3 className="font-color w3-text-center"> Welcome Users... </h3>
 				<br />
-				{this.state.loading ? <div className="w3-loading"> Loading... </div> : null}
-				<div className="w3-userlist-form">
-					{
-						(users || []).map((val, index) => (
-							<div key={index}>
-								<div>
-									<div><i class="fas fa-user"></i>&nbsp;&nbsp;{val.fullName}
-										<button className={(val.fullName === this.props.assignUserName) ? "w3-assigned-btn" : "w3-assign-btn"} onClick={() => this._assignUser(val.fullName)}>
-											<b>	{val.fullName === this.props.assignUserName ? 'Assigned' : 'Assign'} </b></button>
-									</div>
-									<br />
-								</div>
-							</div>
-						))
-					}
+				<div>
+					<ReactTable
+						data={users}
+						columns={columns}
+						defaultPageSize={10}
+					/>
 				</div>
 			</div>
 		)

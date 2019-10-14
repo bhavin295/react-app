@@ -30,6 +30,7 @@ class MainParent extends Component {
 			<div>
 				<Header />
 				<br />
+				
 				<div className="w3-communication-form"> 
 					<h3 className="font-color w3-text-center w3-mb-2"> * Parent to child and child to parent data-communication example * </h3>
 					<ul style={{fontSize:'16px'}}>

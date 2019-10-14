@@ -12,7 +12,7 @@ class About extends Component {
 	render() {
 		let { match } = this.props;
 		return (
-			<div>
+			<div className="bg-banner">
 				<Header />
 				<h3 className="font-color w3-text-center"> Welcome to About US </h3>
 				<div className="w3-text-center w3-contact-form">

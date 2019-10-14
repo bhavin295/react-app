@@ -123,13 +123,13 @@ class FormComponent extends Component {
 			errors["city"] = "";
 		}
 
-		// if ((field ? field === 'selectedFile' : true) && (!this.state.selectedFile)) {
-		// 	formIsValid = false;
-		// 	errors["selectedFile"] = "*Please Upload an image.";
-		// }
-		// else {
-		// 	errors["selectedFile"] = "";
-		// }
+		if ((field ? field === 'selectedFile' : true) && (!this.state.selectedFile)) {
+			formIsValid = false;
+			errors["selectedFile"] = "*Please Upload an image.";
+		}
+		else {
+			errors["selectedFile"] = "";
+		}
 
 		if ((field ? field === 'language' : true) && (!this.state.language)) {
 			formIsValid = false;
@@ -189,7 +189,7 @@ class FormComponent extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="bg-banner">
 				<Header />
 				<form className="w3-signup-form" onSubmit={this.handleSubmit} >
 					<h3 className="font-color w3-mb-2"> Create account </h3>

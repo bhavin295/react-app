@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getNewPassword } from './../redux/actions/index';
+import Header from './Header';
 
 class ForgotPassword extends Component {
 
@@ -73,7 +74,8 @@ class ForgotPassword extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="bg-banner">
+				<Header />
 				<form className="w3-login-form" onSubmit={this.handleSubmit}>
 					<h3 className="font-color w3-mb-2"> Create a new password </h3>
 					<div> &nbsp; Current Password : &nbsp;

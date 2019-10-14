@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import AssignUser from './AssignUser';
 import Header from './Header';
+import SelectComponent from './SelectComponent';
 
 class Dashboard extends Component {
 	constructor() {
@@ -24,7 +25,12 @@ class Dashboard extends Component {
 				</div>
 				<div className="w3-dashboard-form w3-text-center">
 					<h3 className="font-color"> Welcome to Dashboard... </h3>
-					{/* <img style={{ height: "500px", width: '900px', display: 'flex', marginLeft: '12%' }} className="w3-mt-2 w3-text-center" src="https://www.advancedmd.com/wp-content/uploads/2017/12/advancedmd-screenshot-donutLibrary.jpg" /> */}
+					<div style={{ display: 'flex', justifyContent: 'center', alignItems:'center' }}>
+					
+						<img className="w3-mt-2 w3-text-center" src="https://image.freepik.com/free-vector/recruiting-professionals-studying-candidate-profiles_1262-21404.jpg" />
+						
+					</div>
+					{/* <SelectComponent /> */}
 				</div>
 			</div>
 		)

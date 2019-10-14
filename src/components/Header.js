@@ -22,7 +22,10 @@ class Header extends Component {
 					</div>
 					<div className="w3-link">
 						<Link to="/home"><i class="fas fa-home">&nbsp; Home </i></Link>
-						<Link to="/dashboard"><i class="fas fa-tachometer-alt">&nbsp; Dashboard </i></Link>
+						{
+							active &&
+							<Link to="/dashboard"><i class="fas fa-tachometer-alt">&nbsp; Dashboard </i></Link>
+						}
 						<Link to="/about"><i class="fas fa-user">&nbsp; About Us </i></Link>
 						<Link to="/gallary"><i class="fas fa-images">&nbsp; Gallary </i></Link>
 						{
@@ -35,7 +38,7 @@ class Header extends Component {
 							active ?
 								<Link to="/login"><a onClick={this._removeStorage} ><i class="fas fa-sign-out-alt">&nbsp; Logout </i> </a> </Link>
 								:
-								<Link to="/login"><i class="fas fa-sign-in-alt">&nbsp; Login </i></Link>
+								<Link to="/login"><i class="fas fa-sign-in-alt">&nbsp; Sign In </i></Link>
 						}
 					</div>
 				</div>
